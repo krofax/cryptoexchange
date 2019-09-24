@@ -1,0 +1,23 @@
+{
+  "name": "cryptoexchange",
+  "version": "1.0.0",
+  "description": "welcome to crytoexchange",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krofax/cryptoexchange.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krofax/cryptoexchange/issues"
+  },
+  "homepage": "https://github.com/krofax/cryptoexchange#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2"
+  }
+}
