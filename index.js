@@ -1,8 +1,13 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+//configure dotenv 
+dotenv.config();
+
+
 //Connect to DB
-mongoose.connect('mongodb+srv://crypto:change@cluster0-4ropq.mongodb.net/test?retryWrites=true&w=majority',
+mongoose.connect(process.env.DB_CONNECT,
   {useNewUrlParser: true },
   () => console.log('Connected to db!!')
 );
