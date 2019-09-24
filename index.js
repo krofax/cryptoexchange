@@ -1,7 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-
+//Connect to DB
+mongoose.connect('mongodb+srv://crypto:change@cluster0-4ropq.mongodb.net/test?retryWrites=true&w=majority',
+  {useNewUrlParser: true },
+  () => console.log('Connected to db!!')
+);
 const app = express();
 
 //Import Routes
