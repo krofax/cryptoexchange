@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 //Import Routes
 const authRoute = require('./routes/auth');
@@ -18,7 +19,7 @@ mongoose.connect(process.env.DB_CONNECT,
 
 
 //Middleware
-app.use(express.json());
+app.use(bodyParser.json());
 
 
 //Routes Middleware
