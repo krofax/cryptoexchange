@@ -8,13 +8,12 @@ const app = express();
 //Import Routes
 const authRoute = require('./routes/auth');
 
-
 //configure dotenv 
 dotenv.config();
 
 //Connect to DB
 mongoose.connect(process.env.DB_CONNECT,
-  { useUnifiedTopology: true },
+{useNewUrlParser: true },
   () => console.log('Connected to db!!') 
 );
 
