@@ -12,6 +12,8 @@ router.post('/register', async (req, res) => {
     country: req.body.country,
     btcaddress: req.body.btcaddress
   });
+
+
   try {
     const savedUser = await user.save();
     res.send({user: user._id});
@@ -19,5 +21,9 @@ router.post('/register', async (req, res) => {
     res.status(400).send(err);
   }
 });
+
+router.get('/login', (req, res) => {
+  res.send('hello wrold!');
+})
 
 module.exports = router;

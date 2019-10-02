@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+
+const app = express();
 
 //Import Routes
 const authRoute = require('./routes/auth');

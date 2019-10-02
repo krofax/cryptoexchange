@@ -37,10 +37,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
     max: 255
-  },
-  date: {
-    type: Date,
-    default: Date.now
   }
 });
 
