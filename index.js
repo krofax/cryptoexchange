@@ -12,10 +12,14 @@ const authRoute = require('./routes/auth');
 dotenv.config();
 
 //Connect to DB
-mongoose.connect(process.env.DB_CONNECT,
-{useNewUrlParser: true },
-  () => console.log('Connected to db!!') 
-);
+let dev_db_url = 'mongodb://cryptouser:krofax123@ds329058.mlab.com:29058/crypto';
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB,
+  { useNewUrlParser: true },
+  () => console.log('connected to DB!!'));
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 //Middleware

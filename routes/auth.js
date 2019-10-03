@@ -1,5 +1,8 @@
 const router = require('express').Router();
+
+//Routers
 const User = require('../model/User');
+const Admin = require('../model/Admin');
 
 //SIGNUP
 router.post('/register', async (req, res) => {
@@ -13,20 +16,33 @@ router.post('/register', async (req, res) => {
     btcaddress: req.body.btcaddress
   });
 
-
   try {
-    const saving = await user.save();
-    res.json(saving);
+    const saving = await user.save()
+    console.log(saving)
+    res.json({user});
     console.log(user)
-    res.send('hello world!');
   } catch (err) {
     res.json({ message: err });
     console.log('error', err);
   }
 });
 
-router.get('/login', (req, res) => {
-  res.send('hello wrold!');
-})
+//Admin Login
+router.post('/login', async (req, res) => {
+  const admin = new Admin({
+    email: req.body.email,
+    password: req.body.password
+  });
+
+  try {
+    const saveAdmin = await admin.save()
+    console.log(saveAdmin)
+    res.json(saveAdmin);
+  }
+  catch (err) {
+    res.json({ message: err });
+    console.log('error', err);
+  }
+});
 
 module.exports = router;
