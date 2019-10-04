@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv/config');
 const app = express();
 
@@ -19,7 +20,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Middleware
 app.use(bodyParser.json());
-
+app.use(cors());
 
 //Routes Middleware
 app.use('/api/user', authRoute);
