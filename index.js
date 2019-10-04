@@ -9,7 +9,7 @@ const app = express();
 const authRoute = require('./routes/auth');
 
 //Connect to DB
-let mongoDB = process.env.MONGODB_URI
+let mongoDB = process.env.MONGODB_URI || 'mongodb://cryptouser:krofax123@ds329058.mlab.com:29058/crypto'
 mongoose.connect(mongoDB,
   { useNewUrlParser: true },
   () => console.log('connected to DB!!'));
@@ -24,5 +24,5 @@ app.use(cors());
 
 //Routes Middleware
 app.use('/api/user', authRoute);
-
-app.listen(process.env.PORT, () => console.log('app up and running'));
+let PORT = process.env.PORT ||3000;
+app.listen(PORT, () => console.log('app up and running'));
