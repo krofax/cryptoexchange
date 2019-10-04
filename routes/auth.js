@@ -7,6 +7,20 @@ const User = require('../model/User');
 const Admin = require('../model/Admin');
 
 
+//Get all Registered users
+router.get('/users', async (req, res) => {
+  try {
+    const getit = await User.find().limit(1);
+    res.json(getit)
+    console.log(getit);
+  }
+  catch (err) {
+    res.json({ message: err });
+    console.log(err)
+  }
+});
+
+
 //SIGNUP
 router.post('/register', async (req, res) => {
 
@@ -77,5 +91,7 @@ router.post('/admin', async (req, res) => {
     res.status(400).send(err);
   }
 });
+
+
 
 module.exports = router;
