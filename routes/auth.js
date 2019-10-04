@@ -7,10 +7,10 @@ const User = require('../model/User');
 const Admin = require('../model/Admin');
 
 
-//Get all Registered users
+//Get all registered users
 router.get('/users', async (req, res) => {
   try {
-    const getit = await User.find().limit(1);
+    const getit = await User.find()
     res.json(getit)
     console.log(getit);
   }
@@ -20,6 +20,16 @@ router.get('/users', async (req, res) => {
   }
 });
 
+//Get specific users
+router.get('/:userId', async (req, res) => {
+  try {
+    const ids = await User.findById(req.param.userId);
+    res.json(ids);
+  }
+  catch (err) {
+    res.json({message:err});
+  }
+});
 
 //SIGNUP
 router.post('/register', async (req, res) => {
