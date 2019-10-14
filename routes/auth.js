@@ -115,6 +115,9 @@ router.post('/login', async (req, res) => {
   
 })
 
+
+
+
 //Admin Login
 router.post('/admin', async (req, res) => {
   const admin = new Admin({
@@ -131,6 +134,23 @@ router.post('/admin', async (req, res) => {
   }
 });
 
+//Update Admin password
+
+router.patch('/:adminId', async (req, res) => {
+  try {
+    const adminPass = await Admin.updateOne(
+      { _id: req.params.adminId },
+      { $set: { email: req.body.email } }
+    );
+  
+    res.json(adminPass);
+    console.log('adminpass', adminPass)
+  } 
+  catch (err) {
+    res.json({message: err})
+    console.log(err);
+  }
+})
 
 
 module.exports = router;
