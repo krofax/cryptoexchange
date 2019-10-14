@@ -41,7 +41,24 @@ router.delete('/:userId', async (req, res) => {
   catch(err) {
     res.json({message: err})
   }
-})
+}) 
+
+//Update a users info
+
+router.patch('/:userId', async (req, res) => {
+  try {
+    const updatedUser = await User.updateOne(
+      { _id: req.params.userId },
+      { $set: { fullname: req.body.fullname } }
+    );
+    res.json(updatedUser);
+    console.log(updatedUser);
+  }
+  catch (err) {
+    res.json({ message: err });
+    console.log(err)
+  }
+});
 
 //SIGNUP
 router.post('/register', async (req, res) => {
