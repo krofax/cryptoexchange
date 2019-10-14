@@ -10,9 +10,9 @@ const Admin = require('../model/Admin');
 //Get all registered users
 router.get('/users', async (req, res) => {
   try {
-    const getit = await User.find()
-    res.json(getit)
-    console.log(getit);
+    const allUsers = await User.find()
+    res.json(allUsers)
+    console.log(allUsers);
   }
   catch (err) {
     res.json({ message: err });
@@ -23,13 +23,25 @@ router.get('/users', async (req, res) => {
 //Get specific users
 router.get('/:userId', async (req, res) => {
   try {
-    const ids = await User.findById(req.param.userId);
-    res.json(ids);
+    const getUsers = await User.findById(req.params.userId);
+    res.json(getUsers).status(201);
   }
-  catch (err) {
-    res.json({message:err});
+  catch(err) {
+    res.json({message: err})
   }
+  
 });
+
+//Delete Users
+router.delete('/:userId', async (req, res) => {
+  try {
+    const removedUser = await User.remove({_id: req.params.userId});
+    res.json(removedUser);
+  }
+  catch(err) {
+    res.json({message: err})
+  }
+})
 
 //SIGNUP
 router.post('/register', async (req, res) => {
@@ -67,6 +79,7 @@ router.post('/register', async (req, res) => {
   }
 
 });
+
 
 //User Login
 router.post('/login', async (req, res) => {
