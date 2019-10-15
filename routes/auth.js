@@ -11,9 +11,9 @@ const Admin = require('../model/Admin');
 
 
 //Get all registered users
-router.get('/users', getusersController.getUsers);
+router.get('/users', getusersController.getUsers)
 //SIGNUP
-router.post('/register', userController.register);
+router.post('/register', userController.register)
 //User Login
 router.post('/login', userloginController.userLogin)
 //Admin Login
@@ -44,7 +44,6 @@ router.delete('/:userId', async (req, res) => {
 }) 
 
 //Update a users info
-
 router.patch('/:userId', async (req, res) => {
   try {
     const updatedUser = await User.updateOne(
