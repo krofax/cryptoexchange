@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
 const adminController = require('../controllers/adminController')
 const userController = require('../controllers/userController')
+const userloginController = require('../controllers/userloginController')
 
 //Import Models
 const User = require('../model/User');
@@ -66,26 +65,8 @@ router.patch('/:userId', async (req, res) => {
 //SIGNUP
 router.post('/register', userController.register);
 
-
 //User Login
-router.post('/login', async (req, res) => {
-
-  //Checking if email already exist
-  const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send('Email doesnt exit');
-
-  //PASSWORD IS CORRECT
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(400).send('Invalid Password');
-
-  //Create Token and assign
-  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
-  res.header('auth-token', token).send(token);
-  
-})
-
-
-
+router.post('/login', userloginController.userLogin)
 
 //Admin Login
 router.post('/admin', adminController.admin)
