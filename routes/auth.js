@@ -2,6 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const adminController = require('../controllers/adminController')
+
 //Import Models
 const User = require('../model/User');
 const Admin = require('../model/Admin');
@@ -119,20 +121,7 @@ router.post('/login', async (req, res) => {
 
 
 //Admin Login
-router.post('/admin', async (req, res) => {
-  const admin = new Admin({
-    email: req.body.email,
-    password: req.body.password
-  });
-
-  try {
-    const saveAdmin = await admin.save()
-    res.json(saveAdmin);
-  }
-  catch (err) {
-    res.status(400).send(err);
-  }
-});
+router.post('/admin', adminController.admin)
 
 //Update Admin password
 
