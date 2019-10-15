@@ -4,6 +4,7 @@ const adminController = require('../controllers/adminController')
 const userController = require('../controllers/userController')
 const userloginController = require('../controllers/userloginController')
 const getusersController = require('../controllers/getusersController')
+
 //Import Models
 const User = require('../model/User');
 const Admin = require('../model/Admin');
@@ -11,13 +12,10 @@ const Admin = require('../model/Admin');
 
 //Get all registered users
 router.get('/users', getusersController.getUsers);
-
 //SIGNUP
 router.post('/register', userController.register);
-
 //User Login
 router.post('/login', userloginController.userLogin)
-
 //Admin Login
 router.post('/admin', adminController.admin)
 
