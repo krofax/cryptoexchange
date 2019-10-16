@@ -6,6 +6,9 @@
   "scripts": {
     "start": "nodemon index.js"
   },
+  "engines": {
+    "node": "10.14.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/krofax/cryptoexchange.git"
