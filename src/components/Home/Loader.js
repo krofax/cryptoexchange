@@ -3,9 +3,9 @@ import React from 'react';
 
 const Loader = () => {
   return (
-	<div class="preloader">
-    <div class="spinner">
-        <span class="spinner-rotate"></span>
+	<div className="preloader">
+    <div className="spinner">
+        <span className="spinner-rotate"></span>
       </div>
     </div>
   );

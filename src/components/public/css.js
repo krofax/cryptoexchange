@@ -1,0 +1,11 @@
+import './css/style.css';
+import './css/responsive.css';
+import './css/odometer.min.css';
+import './css/meanmenu.css';
+import './css/slick.min.css';
+import './css/nice-select.css';
+import './css/magnific-popup.min.css';
+import './css/flaticon.css';
+import './css/fontawesome.min.css';
+import './css/animate.min.css';
+import './css/bootstrap.min.css';
