@@ -45,21 +45,6 @@ class Home extends React.Component {
                                 </li>
 
                                 <li className="nav-item"><a href="about.html" className="nav-link">About Us</a></li>
-
-                                <li className="nav-item"><a href="#" className="nav-link">Features </a>
-                                    
-                                </li>
-
-                                <li className="nav-item"><a href="#" className="nav-link">Pages</a>
-                                    
-                                </li>
-
-                                <li className="nav-item"><a href="pricing.html" className="nav-link">Pricing</a></li>
-
-                                <li className="nav-item"><a href="#" className="nav-link">Blog </a>
-                                    
-                                </li>
-
                                 <li className="nav-item"><a href="contact.html" className="nav-link">Contact</a></li>
                             </ul>
                             <div className="others-options">
