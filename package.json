@@ -4,7 +4,7 @@
   "description": "welcome to crytoexchange",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "engines": {
     "node": "10.14.1"
