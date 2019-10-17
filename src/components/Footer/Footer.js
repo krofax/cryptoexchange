@@ -26,9 +26,9 @@ const Footer = () => {
           <div class="single-footer-widget pl-5">
               <h3>Company</h3>
             <ul class="list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Register</a></li>
-              <li><a href="#">Login</a></li>
+              <li><a href="/about-us">About Us</a></li>
+              <li><a href="/register">Register</a></li>
+              <li><a href="/login">Login</a></li>
             </ul>
           </div>
         </div>
@@ -37,7 +37,7 @@ const Footer = () => {
           <div class="single-footer-widget">
               <h3>Support</h3>
             <ul class="list">
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="/">Contact Us</a></li>
             </ul>
           </div>
         </div>
@@ -48,7 +48,7 @@ const Footer = () => {
             
             <ul class="footer-contact-info">
               <li><span>Location:</span> 27 Division St, New York, NY 10002, USA</li>
-              <li><span>Email:</span> <a href="#">luvion@gmail.com</a></li>
+              <li><span>Email:</span> <a href="#">info@MoonpaysCu.com</a></li>
               <li><span>Phone:</span> <a href="#">+ (321) 984 754</a></li>
               <li><span>Fax:</span> <a href="#">+1-212-9876543</a></li>
                           </ul>
@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
               <div class="copyright-area">
-                  <p>Copyright @2019 <a href="#">Luvion</a>. All rights reserved</p>
+                  <p>Copyright @2019 <a href="/">MoonpaysCu</a>. All rights reserved</p>
               </div>
           </div>
           
