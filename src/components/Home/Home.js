@@ -62,8 +62,8 @@ class Home extends React.Component {
                 <div className="d-table-cell">
                     <div className="container">
                         <div className="main-banner-content">
-                            <h1>Easy, fee-free banking for entrepreneurs</h1>
-                            <p>Get the financial tools and insights to start, build, and grow your business.</p>
+                            <h1>Have an account with the  21st Century Bank</h1>
+                            <p>Get your financial needs met.</p>
                             <a href="#" className="btn btn-primary">Get Started</a>
                         </div>
                     </div>
@@ -82,10 +82,9 @@ class Home extends React.Component {
                                     <i className="flaticon-piggy-bank"></i>
                                 </div>
 
-                                <h3>Transparent Pricing</h3>
-                                <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                                <h3>Less fees</h3>
+                                <p>Do transactions with little or fees.</p>
 
-                                <a href="features-1.html" className="read-more-btn">Read More</a>
                             </div>
                         </div>
 
@@ -96,9 +95,8 @@ class Home extends React.Component {
                                 </div>
 
                                 <h3>Fully Encrypted</h3>
-                                <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                                <p>We use the highest levels of Internet Security, and it is secured by 256 bits SSL security encryption to ensure that your information is completely protected from fraud.</p>
 
-                                <a href="features-1.html" className="read-more-btn">Read More</a>
                             </div>
                         </div>
 
@@ -108,10 +106,9 @@ class Home extends React.Component {
                                     <i className="flaticon-wallet"></i>
                                 </div>
 
-                                <h3>Instant Cashout</h3>
-                                <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                                <h3>Flexible payment system</h3>
+                                <p>We offer flexible savings and withdrawal targets.</p>
 
-                                <a href="features-1.html" className="read-more-btn">Read More</a>
                             </div>
                         </div>
 
@@ -122,9 +119,7 @@ class Home extends React.Component {
                                 </div>
 
                                 <h3>Safe and Secure</h3>
-                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
-
-                                <a href="features-1.html" className="read-more-btn">Read More</a>
+                                <p>From Signup to getting your returns our processes are secured with optimum standards.</p>
                             </div>
                         </div>
                     </div>
@@ -132,40 +127,7 @@ class Home extends React.Component {
             </div>
         </section>
         {/* Feature box area ends */}
-        {/* Section 1 starts here */}
-        <section className="services-area ptb-70">
-            <div className="container-fluid p-0">
-                <div className="overview-box">
-                    <div className="overview-content">
-                        <div className="content left-content">
-                            <h2>Freelancers, entrepreneurs, and sole traders</h2>
-                            <div className="bar"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <ul className="services-list">
-                                <li><span><i className="flaticon-check-mark"></i> Free plan available</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Full data privacy compliance</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> 100% transparent costs</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Commitment-free</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Real-time spending overview</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Debit Mastercard included</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="overview-image">
-                        <div className="image">
-                            <img src="assets/img/1.png" alt="image"/>
-
-                            <div className="circle-img">
-                                <img src="assets/img/circle.png" alt="image"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/* Section 1 ends here */}
+        
         {/* Section 2 starts here  */}
         <section className="services-area ptb-70 bg-f7fafd">
             <div className="container-fluid p-0">
