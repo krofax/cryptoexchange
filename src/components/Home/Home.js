@@ -22,7 +22,7 @@ class Home extends React.Component {
                 <div className="container">
                     <div className="luvion-responsive-menu">
                         <div className="logo">
-                            <a href="index-2.html">
+                            <a href="/">
                                 <img src="assets/img/logo.png" alt="logo"/>
                                 <img src="assets/img/black-logo.png" alt="logo"/>
                             </a>
@@ -34,7 +34,7 @@ class Home extends React.Component {
             <div className="luvion-nav">
                 <div className="container">
                     <nav className="navbar navbar-expand-md navbar-light">
-                        <a className="navbar-brand" href="index-2.html">
+                        <a className="navbar-brand" href="/">
                             <img src="assets/img/logo.png" alt="logo"/>
                             <img src="assets/img/black-logo.png" alt="logo"/>
                         </a>
@@ -42,14 +42,11 @@ class Home extends React.Component {
                         <div className="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul className="navbar-nav">
                                 <li className="nav-item"><a href="#" className="nav-link">Home </a>
-                                    
                                 </li>
-
-                                <li className="nav-item"><a href="about.html" className="nav-link">About Us</a></li>
-                                <li className="nav-item"><a href="contact.html" className="nav-link">Contact</a></li>
+                                <li className="nav-item"><a href="/about" className="nav-link">About Us</a></li>
                             </ul>
                             <div className="others-options">
-                                <a href="login.html" className="login-btn"><i className="flaticon-user"></i> Log In</a>
+                                <a href="/login" className="login-btn"><i className="flaticon-user"></i> Log In</a>
                             </div>
                         </div>
                     </nav>
@@ -277,7 +274,7 @@ class Home extends React.Component {
                 <div class="account-create-content">
                     <h2>Apply for an account in minutes</h2>
                     <p>Get your account today!</p>
-                    <a href="#" class="btn btn-primary">Get Your Moonpayscu Account</a>
+                    <a href="#" class="btn btn-primary">Get Your Account</a>
                 </div>
             </div>
         </section>
