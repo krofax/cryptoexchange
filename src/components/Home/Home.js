@@ -1,6 +1,7 @@
 import React from 'react';
 import '../public/css';
-// import '../public/script';
+
+import Footer from '../Footer/Footer';
 
 
 class Home extends React.Component {
@@ -141,20 +142,16 @@ class Home extends React.Component {
                             </div>
                         </div>
                     </div>
-
                     <div className="overview-content">
                         <div className="content">
-                            <h2>Small- to medium-sized businesses</h2>
+                            <h2>Grow your Business with us</h2>
                             <div className="bar"></div>
-                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
+                            <p>We offer variety of loan plans that help grow your business.</p>
                             <ul className="services-list">
-                                <li><span><i className="flaticon-check-mark"></i> Easy transfers</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Deposit checks instantly</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> A powerful open API</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Coverage around the world</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Business without borders</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Affiliates and partnerships</span></li>
+                            <li><span><i className="flaticon-check-mark"></i> No garantor for loans</span></li>
+                                <li><span><i className="flaticon-check-mark"></i> Long time span before pay</span></li>
+                                <li><span><i className="flaticon-check-mark"></i>Meaningful Amounts</span></li>
+                                <li><span><i className="flaticon-check-mark"></i> Only 5% of loan fees at repay</span></li>
                             </ul>
                         </div>
                     </div>
@@ -168,17 +165,15 @@ class Home extends React.Component {
                 <div className="overview-box">
                     <div className="overview-content">
                         <div className="content left-content">
-                            <h2>Large or enterprise level businesses</h2>
+                            <h2>24/7 Customer Service</h2>
                             <div className="bar"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>We believe in our services but just in case issues shows up, our customer care is available 24/7 to respond to you.</p>
 
                             <ul className="services-list">
-                                <li><span><i className="flaticon-check-mark"></i> Corporate Cards</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> International Payments</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Automated accounting</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Request Features</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Premium Support</span></li>
-                                <li><span><i className="flaticon-check-mark"></i> Direct Debit</span></li>
+                                <li><span><i className="flaticon-check-mark"></i> Live chat with our customer care</span></li>
+                                <li><span><i className="flaticon-check-mark"></i> Shoot us a mail support.moonpayCu.com</span></li>
+                                <li><span><i className="flaticon-check-mark"></i> Raise a ticket complaints</span></li>
+                                <li><span><i className="flaticon-check-mark"></i> Place a call through to any available customer</span></li>
                             </ul>
                         </div>
                     </div>
@@ -201,46 +196,46 @@ class Home extends React.Component {
         <section className="features-area ptb-70 bg-f6f4f8">
             <div className="container">
                 <div className="section-title">
-                    <h2>Our Features</h2>
+                    <h2>Our Services </h2>
                     <div className="bar"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p> We offer top notch services  </p>
                 </div>
 
                 <div className="row">
                     <div className="col-lg-4 col-sm-6 col-md-6">
                         <div className="single-features-box">
                             <div className="icon">
-                                <i className="flaticon-settings"></i>
+                                <i className="flaticon-cursor"></i>
                             </div>
 
-                            <h3>Incredible infrastructure</h3>
-                            <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            <h3>Loans</h3>
+                            <p> We offer loans to our well esteems customers with over 5 months of quality customer patronage</p>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-sm-6 col-md-6">
                         <div className="single-features-box">
                             <div className="icon bg-f78acb">
-                                <i className="flaticon-envelope-of-white-paper"></i>
+                                <i className="flaticon-info"></i>
                             </div>
 
-                            <h3>Email notifications</h3>
-                            <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            <h3>Online Banking</h3>
+                            <p>We have an online banking platform that helps you make seemless transactions</p>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-sm-6 col-md-6">
                         <div className="single-features-box">
                             <div className="icon bg-cdf1d8">
-                                <i className="flaticon-menu"></i>
+                                <i className="flaticon-alarm"></i>
                             </div>
 
-                            <h3>Simple dashboard</h3>
-                            <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            <h3>Investment Opportunity </h3>
+                            <p>Invest in Bitcoin, Real estate, treasure Bills.</p>
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-sm-6 col-md-6">
+                    {/* <div className="col-lg-4 col-sm-6 col-md-6">
                         <div className="single-features-box">
                             <div className="icon bg-c679e3">
                                 <i className="flaticon-info"></i>
@@ -271,7 +266,7 @@ class Home extends React.Component {
                             <h3>Deadline reminders</h3>
                             <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
@@ -281,81 +276,14 @@ class Home extends React.Component {
             <div class="container">
                 <div class="account-create-content">
                     <h2>Apply for an account in minutes</h2>
-                    <p>Get your Luvion account today!</p>
-                    <a href="#" class="btn btn-primary">Get Your Luvion Account</a>
+                    <p>Get your account today!</p>
+                    <a href="#" class="btn btn-primary">Get Your Moonpayscu Account</a>
                 </div>
             </div>
         </section>
         {/* Create account ends */}
         {/* Footer Starts */}
-        <footer class="footer-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-sm-6 col-md-6">
-						<div class="single-footer-widget">
-							<div class="logo">
-								<a href="#"><img src="assets/img/black-logo.png" alt="logo"/></a>
-                                <p>Quis ipsum suspendisse ultrices gravida commodo. Risus commodo veliliee vel viverra maecenas accumsan lacus vel facilisis.</p>
-							</div>
-                            
-							<ul class="social-links">
-								<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-								<li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-sm-6 col-md-6">
-						<div class="single-footer-widget pl-5">
-                            <h3>Company</h3>
-                            
-							<ul class="list">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Features</a></li>
-								<li><a href="#">Our Pricing</a></li>
-								<li><a href="#">Latest News</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-sm-6 col-md-6">
-						<div class="single-footer-widget">
-                            <h3>Support</h3>
-                            
-							<ul class="list">
-								<li><a href="#">FAQ's</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Terms & Condition</a></li>
-								<li><a href="#">Community</a></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-sm-6 col-md-6">
-						<div class="single-footer-widget">
-							<h3>Address</h3>
-							
-							<ul class="footer-contact-info">
-								<li><span>Location:</span> 27 Division St, New York, NY 10002, USA</li>
-								<li><span>Email:</span> <a href="#">luvion@gmail.com</a></li>
-								<li><span>Phone:</span> <a href="#">+ (321) 984 754</a></li>
-								<li><span>Fax:</span> <a href="#">+1-212-9876543</a></li>
-                            </ul>
-						</div>
-					</div>
-				</div>
-
-                <div class="copyright-area">
-                    <p>Copyright @2019 <a href="#">Luvion</a>. All rights reserved</p>
-                </div>
-            </div>
-            
-            <div class="map-image"><img src="assets/img/map.png" alt="map"/></div>
-		</footer>
+        <Footer />
         {/* Footer End */}
       </div>
     );
