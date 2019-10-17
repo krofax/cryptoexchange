@@ -1,14 +1,14 @@
 import React from 'react';
 
 
-const Loader = () => {
+const Register = () => {
   return (
 	<div>
     <section class="signup-area">
             <div class="row m-0">
                 <div class="col-lg-6 col-md-12 p-0">
                     <div class="signup-image">
-                        <img src="assets/img/signup-bg.jpg" alt="image"/>
+                        <img src="assets/img/1.png" alt="image"/>
                     </div>
                 </div>
 
@@ -21,8 +21,8 @@ const Loader = () => {
                                         <a href="/"><img src="assets/img/black-logo.png" alt="image"/></a>
                                     </div>
 
-                                    <h3>Open up your Luvion Account now</h3>
-                                    <p>Already signed up? <a href="login.html">Log in</a></p>
+                                    <h3>Open up your Moonpayscu Account now</h3>
+                                    <p>Already signed up? <a href="/login">Log in</a></p>
 
                                     <form>
                                         <div class="form-group">
@@ -34,12 +34,6 @@ const Loader = () => {
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Sign Up</button>
-
-                                        <div class="connect-with-social">
-                                            <span>Or</span>
-                                            <button type="submit" class="facebook"><i class="fab fa-facebook-square"></i> Connect with Facebook</button>
-                                            <button type="submit" class="google"><i class="fab fa-google"></i> Connect with Google</button>
-                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -52,4 +46,4 @@ const Loader = () => {
   );
 }
 
-export default Loader;
+export default Register;

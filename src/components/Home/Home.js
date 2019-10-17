@@ -41,7 +41,7 @@ class Home extends React.Component {
 
                         <div className="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul className="navbar-nav">
-                                <li className="nav-item"><a href="#" className="nav-link">Home </a>
+                                <li className="nav-item"><a href="/" className="nav-link">Home </a>
                                 </li>
                                 <li className="nav-item"><a href="/about" className="nav-link">About Us</a></li>
                             </ul>
@@ -62,7 +62,7 @@ class Home extends React.Component {
                         <div className="main-banner-content">
                             <h1>Have an account with the  21st Century Bank</h1>
                             <p>Get your financial needs met.</p>
-                            <a href="#" className="btn btn-primary">Get Started</a>
+                            <a href="/register" className="btn btn-primary">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -274,7 +274,7 @@ class Home extends React.Component {
                 <div class="account-create-content">
                     <h2>Apply for an account in minutes</h2>
                     <p>Get your account today!</p>
-                    <a href="#" class="btn btn-primary">Get Your Account</a>
+                    <a href="/register" class="btn btn-primary">Get Your Account</a>
                 </div>
             </div>
         </section>

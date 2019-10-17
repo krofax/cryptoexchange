@@ -5093,7 +5093,7 @@ Login Area CSS
 .login-image {
   height: 100%;
   width: 100%;
-  background-image: url(../img/login-bg.jpg);
+  background-image: url(../img/5.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -5229,7 +5229,7 @@ Signup Area CSS
 .signup-image {
   height: 100%;
   width: 100%;
-  background-image: url(../img/signup-bg.jpg);
+  background-image: url(../img/1.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
