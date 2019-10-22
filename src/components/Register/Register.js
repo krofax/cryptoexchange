@@ -47,7 +47,7 @@ class Register extends Component {
         };
         axios.post('https://api-backend-mooncu.herokuapp.com/api/register', Userdata)
             .then(res => {
-                if (res.status === 201) {
+                if (res.status === 200) {
 
                     alert('Registered successfully');
 
