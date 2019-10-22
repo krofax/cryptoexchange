@@ -1,49 +1,82 @@
-import React from 'react';
+import React , {Component} from 'react';
+import axiosQueries from '../queries/index';
 
+class Register extends Component {
+    constructor(props) {
+        super(props);
 
-const Register = () => {
-  return (
-	<div>
-    <section class="signup-area">
-            <div class="row m-0">
-                <div class="col-lg-6 col-md-12 p-0">
-                    <div class="signup-image">
-                        <img src="assets/img/1.png" alt="image"/>
-                    </div>
-                </div>
+        this.state = {
+            fullname: '',
+            email: '',
+            password: '',
+            phone: '',
+            address: '',
+            country: '',
+            gender: '',
+            withdraw: '',
+            btcaddress: '',
+            dollar: '',
+            bitcoin: '',
+            date_dollar: '',
+            date_btc: '',
+            date_withdraw: '',
+            date: '',
+            admin: []
+        };
+    }
 
-                <div class="col-lg-6 col-md-12 p-0">
-                    <div class="signup-content">
-                        <div class="d-table">
-                            <div class="d-table-cell">
-                                <div class="signup-form">
-                                    <div class="logo">
-                                        <a href="/"><img src="assets/img/black-logo.png" alt="image"/></a>
+    async componentWillMount() {
+        // console.log('Token', this.props.admin.adminDetails.token);
+        let admins = await axiosQueries.Get('web-product-category');
+
+        this.setState({
+            admin: admins,
+        });
+    }
+    render() {
+        return (
+            <div>
+            <section class="signup-area">
+                    <div class="row m-0">
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="signup-image">
+                                <img src="assets/img/1.png" alt="image"/>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="signup-content">
+                                <div class="d-table">
+                                    <div class="d-table-cell">
+                                        <div class="signup-form">
+                                            <div class="logo">
+                                                <a href="/"><img src="assets/img/black-logo.png" alt="image"/></a>
+                                            </div>
+
+                                            <h3>Open up your Moonpayscu Account now</h3>
+                                            <p>Already signed up? <a href="/login">Log in</a></p>
+
+                                            <form>
+                                                <div class="form-group">
+                                                    <input type="email" name="email" id="email" placeholder="Your email address" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="password" name="password" id="password" placeholder="Create a password" class="form-control"/>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                                            </form>
+                                        </div>
                                     </div>
-
-                                    <h3>Open up your Moonpayscu Account now</h3>
-                                    <p>Already signed up? <a href="/login">Log in</a></p>
-
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" placeholder="Your email address" class="form-control"/>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="password" name="password" id="password" placeholder="Create a password" class="form-control"/>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary">Sign Up</button>
-                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-  </div>
-  );
+                </section>
+        </div>
+        );
+    }
 }
 
 export default Register;
