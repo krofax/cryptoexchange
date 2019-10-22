@@ -4,4 +4,4 @@
 
 
 // Staging
-export const API_BASE = "https://api-backend-mooncu.herokuapp.com/";
+export const API_BASE = "https://api-backend-mooncu.herokuapp.com/api/";

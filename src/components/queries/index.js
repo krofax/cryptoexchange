@@ -4,12 +4,12 @@ import axios from 'axios';
 axios.defaults.baseURL = API_BASE;
 
 export default {
-    Post(link, body, token) {
+    Post(link, body) {
         return axios.post(`${link}`, body, {
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Accept': 'application/json'
+                // 'Authorization': `Bearer ${token}`
             }
         });
     },
