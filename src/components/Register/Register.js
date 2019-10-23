@@ -1,7 +1,8 @@
 import React , {Component} from 'react';
 import axiosQueries from '../queries/index';
 import axios from 'axios';
-import { SIGINT } from 'constants';
+import { toast } from 'react-toastify';
+
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -48,8 +49,17 @@ class Register extends Component {
         axios.post('https://api-backend-mooncu.herokuapp.com/api/register', Userdata)
             .then(res => {
                 if (res.status === 200) {
-
-                    alert('Registered successfully');
+                    alert('Registered Successfully')
+                    toast("You registered successfully ", {
+                        position: "top-center",
+                        type: 'success',
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true
+                    });
+                    window.location.href = "/login";
 
                     // set state to empty
                     this.setState({
@@ -67,9 +77,17 @@ class Register extends Component {
                 }
             })
             .catch(err => {
-                console.log('response,:', err.response)
+                alert('Email already exist');
+                toast('Email Already exist', {
+                    position: "top-center",
+                    type: 'error',
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true
+                });
                 this.setState({ disableBtn: false, signBtn: 'SIGN UP' });
-                alert('FAILEDD!!')
             });
     }
 
