@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../public/css';
-
 const Login = () => {
   return (
 	<div>
