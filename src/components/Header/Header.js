@@ -9,7 +9,7 @@
                 <div className="container">
                     <div className="luvion-responsive-menu">
                         <div className="logo">
-                            <a href="index-2.html">
+                            <a href="/">
                                 <img src="assets/img/logo.png" alt="logo"/>
                                 <img src="assets/img/black-logo.png" alt="logo"/>
                             </a>
@@ -21,7 +21,7 @@
             <div className="luvion-nav">
                 <div className="container">
                     <nav className="navbar navbar-expand-md navbar-light">
-                        <a className="navbar-brand" href="index-2.html">
+                        <a className="navbar-brand" href="/">
                             <img src="assets/img/logo.png" alt="logo"/>
                             <img src="assets/img/black-logo.png" alt="logo"/>
                         </a>
@@ -32,7 +32,7 @@
                                 </li>
                             </ul>
                             <div className="others-options">
-                                <a href="login.html" className="login-btn"><i className="flaticon-user"></i> Log In</a>
+                                <a href="/login" className="login-btn"><i className="flaticon-user"></i> Log In</a>
                             </div>
                         </div>
                     </nav>
