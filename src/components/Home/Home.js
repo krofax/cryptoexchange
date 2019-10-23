@@ -1,8 +1,8 @@
 import React from 'react';
-import '../public/css';
+// import '../public/css';
 
 import Footer from '../Footer/Footer';
-
+import Header from '../Header/Header';
 
 class Home extends React.Component {
   render() {
@@ -17,42 +17,7 @@ class Home extends React.Component {
         </div> */}
         {/* Preloader ends */}
         {/* Navbar starts */}
-        <div className="navbar-area">
-            <div className="luvion-responsive-nav">
-                <div className="container">
-                    <div className="luvion-responsive-menu">
-                        <div className="logo">
-                            <a href="/">
-                                <img src="assets/img/logo.png" alt="logo"/>
-                                <img src="assets/img/black-logo.png" alt="logo"/>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="luvion-nav">
-                <div className="container">
-                    <nav className="navbar navbar-expand-md navbar-light">
-                        <a className="navbar-brand" href="/">
-                            <img src="assets/img/logo.png" alt="logo"/>
-                            <img src="assets/img/black-logo.png" alt="logo"/>
-                        </a>
-
-                        <div className="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul className="navbar-nav">
-                                <li className="nav-item"><a href="/" className="nav-link">Home </a>
-                                </li>
-                                <li className="nav-item"><a href="/about" className="nav-link">About Us</a></li>
-                            </ul>
-                            <div className="others-options">
-                                <a href="/login" className="login-btn"><i className="flaticon-user"></i> Log In</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <Header />
         {/* Navbar ends */}
         {/* Main banner area starts */}
         <div className="main-banner jarallax" data-jarallax='{"speed": 0.3}'>
@@ -269,12 +234,12 @@ class Home extends React.Component {
         </section>
         {/* Features Ends here */}
         {/* Create Account starts */}
-        <section class="account-create-area">
-            <div class="container">
-                <div class="account-create-content">
+        <section className="account-create-area">
+            <div className="container">
+                <div className="account-create-content">
                     <h2>Apply for an account in minutes</h2>
                     <p>Get your account today!</p>
-                    <a href="/register" class="btn btn-primary">Get Your Account</a>
+                    <a href="/register" className="btn btn-primary">Get Your Account</a>
                 </div>
             </div>
         </section>
