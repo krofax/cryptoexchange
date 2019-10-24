@@ -246,9 +246,8 @@ class Home extends React.Component {
         {/* Footer Starts */}
         <Footer />
         {/* Footer End */}
-      </div>
+    </div>
     );
-  }
 }
-      
+}
 export default Home;
