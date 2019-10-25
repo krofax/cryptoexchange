@@ -16,7 +16,7 @@
                     </li>
                     <li><a href="/debit" className="waves-effect "> <span className="hide-menu">Debit User</span></a>
                     </li>
-                    <li><a href="/total-accounts" className="waves-effect "> <span className="hide-menu">Total Account</span></a>
+                    <li><a href="/accounts" className="waves-effect "> <span className="hide-menu">Total Account</span></a>
                     </li>
                     <li><a href="/password" className="waves-effect "> <span className="hide-menu">Change Password</span></a>
                     </li>
