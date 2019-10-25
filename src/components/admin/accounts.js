@@ -1,7 +1,21 @@
 import React, { Component } from 'react'
-import SideBar from './sidebar';
+import axiosQueries from '../queries/index';
 
+import SideBar from './sidebar';
 class totalAccount extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: []
+        };
+    }
+    async componentDidMount() {
+        let allUsers = await axiosQueries.get('users');
+        this.setState({
+            users: allUsers,
+        });
+        console.log('all admins', this.state.users)
+    }
 render() {
     return (
         <div id="wrapper">
@@ -13,7 +27,6 @@ render() {
                         <h4 className="page-title">Total Activated Accounts <span className="label label-danger">{`4`}</span></h4>
                     </div>
                 </div>
-
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="white-box">
