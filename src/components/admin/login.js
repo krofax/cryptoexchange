@@ -6,18 +6,21 @@
             <div>
                 <form className="well form-horizontal" action="" method="post">
                     <div className="container">
-
+                            <div className="logo">
+                                    <a href="/"><img src="assets/img/black-logo.png" alt="mooncu"/></a>
+                            </div>
+                    
                         <div className="row">
-                            <div className="col-md-6 col-md-offset-3">
+                            <div className="col-md-6 col-md-offset-3" style={{ marginRight: '20px', marginTop: '30px' }}>
                                     <div className="form-group">
                                         <label for="username">Username</label>
                                         <input type="text" className="form-control" required="" name="username" placeholder="Enter Username"/>
                                     </div>
                                 </div>
-                                <div className="col-md-6 col-md-offset-3">
+                                <div className="col-md-6 col-md-offset-3" style={{ marginTop: '30px' }}>
                                     <div className="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" className="form-control" required="" name="password" placeholder="Enter your password"/>
+                                        <input type="password" className="form-control"  required="" name="password" placeholder="Enter your password"/>
                                     </div>
                                 </div>
                             </div>
