@@ -1,13 +1,11 @@
     import React, { Component } from 'react'
 
-    import Nav from './top-nav';
     import SideBar from './sidebar';
 
     class Admin extends Component {
     render() {
         return (
         <div id="wrapper">
-            <Nav/>
             <SideBar/>
             <div id="page-wrapper">
                 <div className="container-fluid">
