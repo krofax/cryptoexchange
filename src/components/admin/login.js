@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import axiosQueries from '../queries/index';
+// import axiosQueries from '../queries/index';
 import axios from 'axios';
 
 class AdminLogin extends Component {
