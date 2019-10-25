@@ -12,19 +12,15 @@
                 </div>
                 <ul className="nav" id="side-menu">
                     <li>
-                        <a href="index.php" className="waves-effect "><span className="hide-menu">Credit User</span></a>
+                        <a href="/admin" className="waves-effect "><span className="hide-menu">Credit User</span></a>
                     </li>
-                    <li><a href="debit.php" className="waves-effect "> <span className="hide-menu">Debit User</span></a>
+                    <li><a href="/debit" className="waves-effect "> <span className="hide-menu">Debit User</span></a>
                     </li>
-                    <li><a href="total-accounts.php" className="waves-effect "> <span className="hide-menu">Total Account</span></a>
+                    <li><a href="/total-accounts" className="waves-effect "> <span className="hide-menu">Total Account</span></a>
                     </li>
-                    <li><a href="funds-transfer.php" className="waves-effect "> <span className="hide-menu">Activity Details</span></a>
+                    <li><a href="/password" className="waves-effect "> <span className="hide-menu">Change Password</span></a>
                     </li>
-                    <li><a href="user-access.php" className="waves-effect "><span className="hide-menu">User Access</span></a>
-                    </li>
-                    <li><a href="password.php" className="waves-effect "> <span className="hide-menu">Change Password</span></a>
-                    </li>
-                    <li><a href="logout.php" className="waves-effect "> <span className="hide-menu">Logout</span></a>
+                    <li><a href="/logout" className="waves-effect "> <span className="hide-menu">Logout</span></a>
                     </li>
                 </ul>
             </div>

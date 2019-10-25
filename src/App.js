@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Admin from './components/admin/index';
 import AdminLogin from './components/admin/login';
+import Debit from './components/admin/debit';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/register" component={Register} exact></Route>
             <Route path="/admin" component={Admin} exact></Route>
             <Route path="/admin-login" component={AdminLogin} exact></Route>
+            <Route path="/debit" component={Debit} exact></Route>
             <Route component={Home}></Route>
           </Switch>
         </Router>
