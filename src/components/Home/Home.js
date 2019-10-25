@@ -96,10 +96,10 @@ class Home extends React.Component {
                 <div className="overview-box">
                     <div className="overview-image">
                         <div className="image">
-                            <img src="assets/img/2.png" alt="image"/>
+                            <img src="assets/img/2.png" alt="mooncu"/>
 
                             <div className="circle-img">
-                                <img src="assets/img/circle.png" alt="image"/>
+                                <img src="assets/img/circle.png" alt="mooncu"/>
                             </div>
                         </div>
                     </div>
@@ -141,10 +141,10 @@ class Home extends React.Component {
 
                     <div className="overview-image">
                         <div className="image">
-                            <img src="assets/img/3.png" alt="image"/>
+                            <img src="assets/img/3.png" alt="mooncu"/>
 
                             <div className="circle-img">
-                                <img src="assets/img/circle.png" alt="image"/>
+                                <img src="assets/img/circle.png" alt="mooncu"/>
                             </div>
                         </div>
                     </div>

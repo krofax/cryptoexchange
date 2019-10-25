@@ -102,7 +102,7 @@ class Register extends Component {
                     <div className="row m-0">
                         <div className="col-lg-6 col-md-12 p-0">
                             <div className="signup-image">
-                                <img src="assets/img/1.png" alt="image"/>
+                                <img src="assets/img/1.png" alt="mooncu"/>
                             </div>
                         </div>
 
@@ -112,7 +112,7 @@ class Register extends Component {
                                     <div className="d-table-cell">
                                         <div className="signup-form">
                                             <div className="logo">
-                                                <a href="/"><img src="assets/img/black-logo.png" alt="image"/></a>
+                                                <a href="/"><img src="assets/img/black-logo.png" alt="mooncu"/></a>
                                             </div>
 
                                             <h3>Open up your Moonpayscu Account now</h3>

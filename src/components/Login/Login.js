@@ -7,7 +7,7 @@ const Login = () => {
             <div className="row m-0">
                 <div className="col-lg-6 col-md-12 p-0">
                     <div className="login-image">
-                        <img src="assets/img/5.png" alt="image"/>
+                        <img src="assets/img/5.png" alt="mooncu"/>
                     </div>
                 </div>
 
@@ -17,7 +17,7 @@ const Login = () => {
                             <div className="d-table-cell">
                                 <div className="login-form">
                                     <div className="logo">
-                                        <a href="/"><img src="assets/img/black-logo.png" alt="image"/></a>
+                                        <a href="/"><img src="assets/img/black-logo.png" alt="mooncu"/></a>
                                     </div>
 
                                     <h3>Welcome back</h3>
