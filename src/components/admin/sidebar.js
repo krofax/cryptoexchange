@@ -1,6 +1,6 @@
     import React, { Component } from 'react'
 
-    export default class sidebar extends Component {
+    class SideBar extends Component {
     render() {
         return (
             <div class="navbar-default sidebar" role="navigation">
@@ -39,6 +39,7 @@
         </div>
         )
     }
-    }
+}
 
+export default SideBar;
             
