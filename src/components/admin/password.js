@@ -37,7 +37,7 @@ render() {
                                                     <input name="cpass" className="form-control" type="password" placeholder="Confirm new password"/>
                                                 </div>
                                             </div>
-                          <button type="submit" name="submit" className="button-box btn btn-success" style={{ padding: '10px 30px' }}>Continue </button>
+                                        <button type="submit" name="submit" className="button-box btn btn-success" style={{ padding: '10px 30px' }}>Continue </button>
                                         </div>
                                         <div className="panel-footer">  </div>
                                     </div>
