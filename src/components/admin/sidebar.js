@@ -11,17 +11,9 @@
                     </div>
                 </div>
                 <ul class="nav" id="side-menu">
-                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search..."/>
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
-                            </span>
-                        </div>
+                    <li>
+                        <a href="index.php" class="waves-effect "><i class="icon-credit-card fa-fw"></i> <span class="hide-menu">Credit User></span></a>
                     </li>
-                        <li>
-                            <a href="index.php" class="waves-effect "><i class="icon-credit-card fa-fw"></i> <span class="hide-menu">Credit User></span></a>
-                        </li>
                     <li><a href="debit.php" class="waves-effect "><i class="icon-credit-card fa-fw"></i> <span class="hide-menu">Debit User></span></a>
                     </li>
                     <li><a href="total-accounts.php" class="waves-effect "><i class="icon-notebook fa-fw"></i> <span class="hide-menu">Total Account <span class="fa arrow"></span></span></a>
