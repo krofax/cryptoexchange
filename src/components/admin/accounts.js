@@ -49,14 +49,22 @@
                                                 <th>Fullname</th>
                                                 <th>Country</th>
                                                 <th>Phone</th>
+                                                <th>Email</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
                                             <tr>
                                                 <td>{persons.fullname}</td>
+                                            </tr>
+                                            <tr>
                                                 <td>{persons.country}</td>
+                                            </tr>
+                                            <tr>
                                                 <td>{persons.phone}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{persons.email}</td>
                                             </tr>
                                         </tr>
                                         </tbody>
