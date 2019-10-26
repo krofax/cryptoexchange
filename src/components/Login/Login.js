@@ -21,7 +21,7 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         };
-        axios.post('https://api-backend-mooncu.herokuapp.com/api/login', userData)
+        axios.post('login', userData)
             .then(res => {
                 if (res.status === 200) {
                     this.setState({
@@ -30,7 +30,7 @@ class Login extends Component {
                         btnTxt: 'LOGIN',
                         btnDis: true
                     });
-                    window.location.href = "/users";
+                    // window.location.href = "/users";
                 }
             })
             .catch(err => {
