@@ -68,7 +68,7 @@ body {
 }
 /*Sidebar*/
 .sidebar {
-  background: #4F5467;
+  background: rgb(216, 220, 238);
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
 }
 .sidebar .label-custom {

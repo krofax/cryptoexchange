@@ -50,7 +50,7 @@
                                 <div className="row">
                                     <div className="col-sm-12 col-md-6 col-lg-6">
                                         <h3 className="box-title">Credit User Account</h3>
-                                        <form name="credit" className="form-horizontal" action="process-credit.php" method="post">
+                                        <form name="credit" className="form-horizontal">
                                             <div className="form-group row">
                                                 <label className="col-sm-3 control-label col-form-label">Credit User</label>
                                                 <div className="col-sm-9">
