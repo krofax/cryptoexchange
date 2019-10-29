@@ -45,7 +45,7 @@
 
     render() {
         return (
-            <div id="wrapper">
+        <div id="wrapper">
             <SideBar/>
             <div id="page-wrapper">
                 <div className="container-fluid">
@@ -58,23 +58,23 @@
                         <div className="col-lg-12">
                             <div className="white-box">
                                 <div className="col-sm-12">
-                                <h3 className="box-title">Total Users Details</h3>
-                                <div className="table-responsive">
-                                    <table className="table color-bordered-table red-bordered-table">
-                                        <thead>
-                                            <tr>
-                                                <th>Fullname</th>
-                                                <th>Country</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Email</th>
-                                                <th>Gender</th>
-                                                <th>Btc Address</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {this.getUser()}
-                                        </tbody>
+                                    <h3 className="box-title">Total Users Details</h3>
+                                    <div className="table-responsive">
+                                        <table className="table color-bordered-table red-bordered-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fullname</th>
+                                                    <th>Country</th>
+                                                    <th>Phone</th>
+                                                    <th>Address</th>
+                                                    <th>Email</th>
+                                                    <th>Gender</th>
+                                                    <th>Btc Address</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    {this.getUser()}
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
