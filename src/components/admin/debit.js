@@ -1,12 +1,39 @@
-import React, { Component } from 'react'
-
-import SideBar from './sidebar';
-
-class Debit extends Component {
-render() {
-return (
-    <div>
+    import React, { Component } from 'react'
+import axiosQueries from '../queries/index';
     
+    import SideBar from './sidebar';
+    
+    class Debit extends Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                users: [],
+                usersCount:''
+            };
+        };
+
+        async componentDidMount() {
+            let allUsers = await axiosQueries.Get('users');
+
+            this.setState({
+                users: allUsers.data,
+                usersCount: allUsers.data.length
+            });
+            console.log('all users', this.state.users)
+            console.log('all usersCount', this.state.usersCount)
+        }
+
+        getUser() {
+            return this.state.users.map(persons => {
+                return (
+                    <option key={persons._id} value={persons.fullname}>{persons.fullname}</option>
+                )
+            })
+        }
+
+    render() {
+    return (
+        <div>
             <div id="wrapper">
             <SideBar />
             <div id="page-wrapper">
@@ -31,9 +58,8 @@ return (
                                             <div className="form-group row">
                                                 <label className="col-sm-3 control-label col-form-label">Debit User</label>
                                                 <div className="col-sm-9">
-                                                    <select name="user" className="form-control ">
-                                                        <option value="">--Select User to Debit--</option>
-                                                        
+                                                        <select name="user" className="form-control ">
+                                                            {this.getUser()}
                                                     </select>
                                                 </div>
                                             </div>
@@ -54,19 +80,19 @@ return (
                                             </div>
                                         </form>
                                     </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <footer className="footer text-center">Mooncupays &copy; 2019 </footer>
                 </div>
-                <footer className="footer text-center">Mooncupays &copy; 2019 </footer>
+
+
             </div>
-
-
         </div>
-    </div>
-)
-}
-}
+    )
+    }
+    }
 
-export default Debit;
+    export default Debit;

@@ -1,8 +1,33 @@
     import React, { Component } from 'react'
-
+    import axiosQueries from '../queries/index';
     import SideBar from './sidebar';
 
     class Admin extends Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                users: [],
+                usersCount:''
+            };
+        };
+
+        async componentDidMount() {
+            let allUsers = await axiosQueries.Get('users');
+
+            this.setState({
+                users: allUsers.data,
+                usersCount: allUsers.data.length
+            });
+        }
+
+        getUser() {
+            return this.state.users.map(persons => {
+                return (
+                    <option key={persons._id} value={persons.fullname}>{persons.fullname}</option>
+                )
+            })
+        }
+
     render() {
         return (
         <div id="wrapper">
@@ -30,8 +55,7 @@
                                                 <label className="col-sm-3 control-label col-form-label">Credit User</label>
                                                 <div className="col-sm-9">
                                                     <select name="user" className="form-control ">
-                                                        <option value='Blessing'> </option>
-                                                        <option value='Krofegha'>Krofegha </option>
+                                                        {this.getUser()}
                                                     </select>
                                                 </div>
                                             </div>
