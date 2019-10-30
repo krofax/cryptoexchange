@@ -13,7 +13,6 @@ class SideBar extends Component {
                                         <li className="nav-item"><a className="nav-link" href="profile-cards-and-bank-accounts.html"><i className="fas fa-university"></i> Cards & Bank Accounts</a></li>
                                         <li className="nav-item"><a className="nav-link" href="deposit-money.html"><i className="fas fa-plus"></i> Deposit Money</a></li>
                                         <li className="nav-item"><a className="nav-link" href="send-money.html"><i className="far fa-paper-plane"></i> Send Money</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="request-money.html"><i className="fas fa-piggy-bank"></i> Request Money</a></li>
                                         <li className="nav-item"><a className="nav-link" href="withdraw-money.html"><i className="fas fa-wallet"></i> Withdarw Money</a></li>
                                         <li className="nav-item"><a className="nav-link" href="transactions.html"><i className="fas fa-list-ul"></i>Transaction</a></li>
                                         <li className="nav-item"><a className="nav-link" href="profile-notifications.html"><i className="fas fa-cog"></i>Setting</a></li>
