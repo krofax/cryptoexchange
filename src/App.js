@@ -11,7 +11,6 @@ import Debit from './components/admin/debit';
 import totalAccount from './components/admin/accounts';
 import Password from './components/admin/password';
 import Logout from './components/admin/logout';
-import User from './components/users/User';
 import Dashboard from './components/users/dashboard';
 import Profile from './components/users/profile';
 import UserDeposit from './components/users/deposit';
@@ -31,7 +30,6 @@ function App() {
             <Route path="/accounts" component={totalAccount} exact></Route>
             <Route path="/password" component={Password} exact > </Route>
             <Route path="/logout" component={Logout} exact > </Route>
-            <Route path="/users" component={User} exact > </Route>
             <Route path="/dashboard" component={Dashboard} exact > </Route>
             <Route path="/user-profile" component={Profile} exact > </Route>
             <Route path="/user-deposit" component={UserDeposit} exact > </Route>

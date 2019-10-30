@@ -14,7 +14,7 @@ class SideBar extends Component {
                                         <li className="nav-item"><a className="nav-link" href="/user-deposit"><i className="fas fa-plus"></i> Deposit Money</a></li>
                                         <li className="nav-item"><a className="nav-link" href="/send-money"><i className="far fa-paper-plane"></i> Send Money</a></li>
                                         <li className="nav-item"><a className="nav-link" href="/user-withdraw"><i className="fas fa-wallet"></i> Withdraw Money</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="/history"><i className="fas fa-list-ul"></i>Transaction</a></li>
+                                        {/* <li className="nav-item"><a className="nav-link" href="/history"><i className="fas fa-list-ul"></i>Transaction</a></li> */}
                                     </ul>
                                 </div>
                             </div>

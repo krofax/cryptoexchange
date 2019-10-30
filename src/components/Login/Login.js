@@ -30,7 +30,7 @@ class Login extends Component {
                         btnTxt: 'LOGIN',
                         btnDis: true
                     });
-                    // window.location.href = "/users";
+                    window.location.href = "/dashboard";
                 }
             })
             .catch(err => {
