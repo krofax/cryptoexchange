@@ -16,6 +16,7 @@ import Dashboard from './components/users/dashboard';
 import Profile from './components/users/profile';
 import UserDeposit from './components/users/deposit';
 import SendMoney from './components/users/send';
+import WithdrawMoney from './components/users/withdraw'
 function App() {
   return (
     <React.Fragment>
@@ -32,9 +33,10 @@ function App() {
             <Route path="/logout" component={Logout} exact > </Route>
             <Route path="/users" component={User} exact > </Route>
             <Route path="/dashboard" component={Dashboard} exact > </Route>
-          <Route path="/profile" component={Profile} exact > </Route>
-          <Route path="/user-deposit" component={UserDeposit} exact > </Route>
-          <Route path="/send-money" component={SendMoney} exact > </Route>
+            <Route path="/user-profile" component={Profile} exact > </Route>
+            <Route path="/user-deposit" component={UserDeposit} exact > </Route>
+            <Route path="/send-money" component={SendMoney} exact > </Route>
+            <Route path="/user-withdraw" component={WithdrawMoney} exact > </Route>
             <Route component={Home}></Route>
           </Switch>
         </Router>

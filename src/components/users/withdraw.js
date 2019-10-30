@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
+
 import Header from './header';
 import SideBar from './sidebar';
 import SubHeader from './subheader';
-
-class UserDeposit extends Component {
+class WithdrawMoney extends Component {
   render() {
     return (
       <div id="main-wrapper">
@@ -18,9 +18,24 @@ class UserDeposit extends Component {
                 <div className="bg-white">
                     <div className="row">
                         <div className="col-md-8 col-lg-8 mx-auto ">
-                            <div className="bg-light shadow-md rounded p-3 p-sm-4 mb-8 mt-8 form-box">
-                                <form id="form-send-money" method="post" className="form">
-                                    <div className="form-group">
+                        <div class="bg-light shadow-sm rounded p-3 p-sm-4 mb-4  form-box">
+                                    <div class="text-center bg-primary p-4 rounded mb-4">
+                                        <h3 class="text-10 text-white font-weight-400">$2956.00</h3>
+                                        <p class="text-white">Available Balance</p>
+                                        <a href="#"
+                                          class="btn btn-outline-light btn-sm shadow-none text-uppercase rounded-pill text-1">Withdraw
+                                            Full Amount</a></div>
+                                    <form id="form-send-money" method="post">
+                                        <div class="form-group">
+                                            <label for="withdrawto">Withdraw to</label>
+                                            <select id="withdrawto" class="custom-select" required="">
+                                                <option value="">HDFC Bank - XXXXXXXXXXXX-9025</option>
+                                                <option>Bank A/c 2 - XXXXXX-1211</option>
+                                                <option>Bank A/c 3 - XXXXXX-2011</option>
+                                                <option>Bank A/c 4 - XXXXXX-2011</option>
+                                            </select>
+                                        </div>
+                                      <div className="form-group">
                                         <label for="youSend">Amount</label>
                                         <div className="input-group">
                                             <div className="input-group-prepend"><span
@@ -42,26 +57,15 @@ class UserDeposit extends Component {
                                             </select>
                                             </span></div>
                                         </div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label for="paymentMethod">Payment Method</label>
-                                        <select id="cardType" className="custom-select" required="">
-                                            <option value="">Select Payment Method</option>
-                                            <option>Credit or Debit Cards</option>
-                                            <option>Bank Accounts</option>
-                                        </select>
-                                    </div>
-                                    <p className="text-muted charge-area mt-4">Transactions fees <span
-                                            className="float-right d-flex align-items-center"><del>1.00 USD</del> <span
-                                            className="bg-success text-1 text-white font-weight-500 rounded d-inline-block px-2 line-height-4 ml-2 free-charge">Free</span></span>
-                                    </p>
-                                    <hr/>
-                                    <p className="font-weight-500">You'll deposit <span
-                                            className="text-3 float-right">1,000.00 USD</span></p>
-                                    <button className="btn btn-default btn-center btn-block">
-                                        <span className="bh"></span>
-                                        <span>Continue</span>
-                                    </button>
+                                      </div>
+                                      <p class="text-muted mt-4">Transactions fees <span
+                                                class="float-right d-flex align-items-center">5.00 USD</span></p>
+                                        <p class="font-weight-500">Amount to Withdraw <span
+                                                class="text-3 float-right">1,000.00 USD</span></p>
+                                        <button class="btn btn-default btn-center btn-block">
+                                            <span class="bh"></span>
+                                            <span>Continue</span>
+                                        </button>
                                 </form>
                             </div>
                         </div>
@@ -76,4 +80,5 @@ class UserDeposit extends Component {
     )
   }
 }
-export default UserDeposit;
+
+export default WithdrawMoney

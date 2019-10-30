@@ -9,13 +9,12 @@ class SideBar extends Component {
                                 <div className="Profile-menu">
                                     <ul className="nav secondary-nav">
                                         <li className="nav-item active"><a className="nav-link " href="/dashboard"><i className="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="profile"><i className="fab fa-autoprefixer"></i> Account</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="profile-cards-and-bank-accounts.html"><i className="fas fa-university"></i> Cards & Bank Accounts</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="deposit-money.html"><i className="fas fa-plus"></i> Deposit Money</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="send-money.html"><i className="far fa-paper-plane"></i> Send Money</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="withdraw-money.html"><i className="fas fa-wallet"></i> Withdarw Money</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="transactions.html"><i className="fas fa-list-ul"></i>Transaction</a></li>
-                                        <li className="nav-item"><a className="nav-link" href="profile-notifications.html"><i className="fas fa-cog"></i>Setting</a></li>
+                                        <li className="nav-item"><a className="nav-link" href="/user-profile"><i className="fab fa-autoprefixer"></i> Account</a></li>
+                                        <li className="nav-item"><a className="nav-link" href="/cards"><i className="fas fa-university"></i> Cards & Bank Accounts</a></li>
+                                        <li className="nav-item"><a className="nav-link" href="/user-deposit"><i className="fas fa-plus"></i> Deposit Money</a></li>
+                                        <li className="nav-item"><a className="nav-link" href="/send-money"><i className="far fa-paper-plane"></i> Send Money</a></li>
+                                        <li className="nav-item"><a className="nav-link" href="/user-withdraw"><i className="fas fa-wallet"></i> Withdraw Money</a></li>
+                                        <li className="nav-item"><a className="nav-link" href="/history"><i className="fas fa-list-ul"></i>Transaction</a></li>
                                     </ul>
                                 </div>
                             </div>
