@@ -13,6 +13,7 @@ import Password from './components/admin/password';
 import Logout from './components/admin/logout';
 import User from './components/users/User';
 import Dashboard from './components/users/dashboard';
+import Profile from './components/users/profile';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/logout" component={Logout} exact > </Route>
             <Route path="/users" component={User} exact > </Route>
             <Route path="/dashboard" component={Dashboard} exact > </Route>
+            <Route path="/profile" component={Profile} exact > </Route>
             <Route component={Home}></Route>
           </Switch>
         </Router>
