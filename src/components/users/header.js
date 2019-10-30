@@ -10,16 +10,13 @@ class Header extends Component {
                             <img src="assets/img/black-logo.png" alt="logo"/>
                         </a>
                         <nav className="primary-menu ml-auto">
-                            <a id="mobile-menu-toggler" href="#"><i className="fas fa-bars"></i></a>
+                            <a id="mobile-menu-toggler" href="/"><i className="fas fa-bars"></i></a>
                             <ul>
-                                <li className="current-menu-item has-menu-child"><a href="#">Home</a>
-                                    
-                                </li>
                                 <li className="current-menu-item"><a href="dashboard.html">Dashboard</a></li>
                                 
                                 
                                 <li className="has-menu-child pro-menu-drop">
-                                    <a href="#">
+                                    <a href="/">
                                         <div className="header-pro-thumb">
                                             <img className="rounded-circle" src="assets/img/profile.jpg" alt="down"/>
                                         </div> Jhone Due <i className="fas fa-chevron-down"></i>
@@ -33,19 +30,14 @@ class Header extends Component {
                                         </li>
                                         <li><hr className="mx-n3 mt-0"/></li>
                                         <li className="nav__create-new-profile-link">
-                                            <a href="profile.html">
+                                            <a href="/profile">
                                                 <span>View personal profile</span>
                                             </a>
                                         </li>
                                         <li className="divider"></li>
+                                        
                                         <li className="nav__dropdown-menu-items">
-                                            <a href="profile-notifications.html">
-                                                <i className="icon icon-setting"></i>
-                                                <span>Settings</span>
-                                            </a>
-                                        </li>
-                                        <li className="nav__dropdown-menu-items">
-                                            <a href="#"><i className="icon icon-logout"></i><span>Logout</span></a>
+                                            <a href="/logout"><i className="icon icon-logout"></i><span>Logout</span></a>
                                         </li>
                                     </ul>
                                 </li>

@@ -22,7 +22,7 @@ class WithdrawMoney extends Component {
                                     <div class="text-center bg-primary p-4 rounded mb-4">
                                         <h3 class="text-10 text-white font-weight-400">$2956.00</h3>
                                         <p class="text-white">Available Balance</p>
-                                        <a href="#"
+                                        <a href="/"
                                           class="btn btn-outline-light btn-sm shadow-none text-uppercase rounded-pill text-1">Withdraw
                                             Full Amount</a></div>
                                     <form id="form-send-money" method="post">

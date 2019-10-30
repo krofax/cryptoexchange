@@ -23,8 +23,8 @@ render() {
                                         <div className="pb-3 pl-3 pr-3 pt-0">
                                             <hr className="mx-n3 mt-0"/>
                                             <div className="d-flex">
-                                                <a href="#" className="btn-link mr-auto">Send</a>
-                                                <a href="#" className="btn-link ml-auto">Withdraw</a>
+                                                <a href="/" className="btn-link mr-auto">Send</a>
+                                                <a href="/" className="btn-link ml-auto">Withdraw</a>
                                             </div>
                                         </div>
 

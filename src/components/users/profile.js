@@ -49,7 +49,7 @@
                                 <form id="phone" method="post">
                                     
                                     <a className="btn-link text-uppercase d-flex align-items-center text-1 float-right mb-3"
-                                        href="#"><span className="text-3 mr-1"><i className="fas fa-plus-circle"></i></span>Add
+                                        href="/"><span className="text-3 mr-1"><i className="fas fa-plus-circle"></i></span>Add
                                         another Phone</a>
                                     <button className="btn btn-primary btn-block" type="submit">Save Changes</button>
                                 </form>
