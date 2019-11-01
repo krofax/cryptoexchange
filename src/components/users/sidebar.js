@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 import { NavLink } from 'react-router-dom';
-import AuthContext from '../Context/auth-token';
+// import AuthContext from '../Context/auth-token';
 class SideBar extends Component {
   render() {
     return (
-      <AuthContext.Consumer >
+      // <AuthContext.Consumer >
 
         <aside className="col-lg-3 sidebar">
           
@@ -23,7 +23,7 @@ class SideBar extends Component {
               </div>
           </div>
       </aside>
-      </AuthContext.Consumer>
+      // </AuthContext.Consumer>
     )
   }
 }

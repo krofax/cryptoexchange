@@ -12,15 +12,16 @@ class Login extends Component {
             email: '',
             password: '',
             btnTxt: 'LOGIN',
-            btnDis: false
+            btnDis: false,
+            userToken: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    static contextType = AuthContext;
+
     handleSubmit(e) {
         e.preventDefault()
-        this.setState({btnDis: true, btnTxt: 'LOADING.....'})
+        this.setState({btnDis: true, btnTxt: 'PROCESSING.....'})
         let userData = {
             email: this.state.email,
             password: this.state.password
@@ -28,24 +29,26 @@ class Login extends Component {
         axios.post('login', userData)
             .then(res => {
                 if (res.status === 200) {
+                    const token = res.data.token;
                     this.setState({
                         email: '',
                         password: '',
                         btnTxt: 'LOGIN',
-                        btnDis: true
+                        btnDis: true,
+                        userToken: token
                     });
-                    window.location.href = "/dashboard";
-                    console.log('tokens', res.data)
+                    console.log('tokens', this.state.userToken)
                 }
+                window.location.href = "/dashboard";
+                // alert('logged in')
+                // if (res.data.token) {
+                //     this.context.login(
+                //         res.data.login.token,
+                //         res.data.login.user
+                //     )
+                // }
             })
-            .then(resData => {
-                if (resData.data.token) {
-                    this.context.login(
-                        resData.data.login.token,
-                        resData.data.login.user
-                    )
-                }
-            })
+            
             .catch(err => {
                 alert('Invalid Login Details')
                 this.setState({btnTxt: 'LOGIN', btnDis: false})

@@ -15,7 +15,6 @@ class Register extends Component {
             address: '',
             country: '',
             gender: '',
-            btcaddress: '',
             admin: [],
             signBtn: 'Sign Up',
             disableBtn: false
@@ -43,10 +42,9 @@ class Register extends Component {
                 phone: this.state.phone,
                 address : this.state.address,
                 country:this.state.country,
-                gender:this.state.gender,
-                btcaddress: this.state.btcaddress
+                gender:this.state.gender
         };
-        axios.post('https://api-backend-mooncu.herokuapp.com/api/register', Userdata)
+        axios.post('register', Userdata)
             .then(res => {
                 if (res.status === 200) {
                     alert('Registered Successfully')
@@ -70,7 +68,6 @@ class Register extends Component {
                         address: '',
                         country: '',
                         gender: '',
-                        btcaddress: '',
                         signBtn: 'Sign Up',
                         disableBtn: false
                     });
@@ -120,33 +117,31 @@ class Register extends Component {
 
                                             <form onSubmit={this.handleSubmit}>
                                             <div className="form-group">
-                                                    <input type="text" onChange={this.handleChange} name="fullname" id="email" value={this.state.fullname} placeholder="fullname" className="form-control"/>
+                                                    <input type="text" required  onChange={this.handleChange} name="fullname" id="email" value={this.state.fullname} placeholder="fullname" className="form-control"/>
                                                 </div>
 
                                                 <div className="form-group">
-                                                    <input type="text" onChange={this.handleChange} name="email" id="email" value={this.state.email} placeholder="Your email address" className="form-control"/>
+                                                    <input type="email" required onChange={this.handleChange} name="email" id="email" value={this.state.email} placeholder="Your email address" className="form-control"/>
                                                 </div>
 
                                                 <div className="form-group">
-                                                    <input type="password" onChange={this.handleChange} name="password" id="password"value={this.state.password} placeholder="Create a password" className="form-control"/>
+                                                    <input type="password" required onChange={this.handleChange} name="password" id="password"value={this.state.password} placeholder="Create a password" className="form-control"/>
                                                 </div>
                                                 <div className="form-group">
-                                                    <input type="text" onChange={this.handleChange} name="phone" id="phone" placeholder="+0189000" value={this.state.phone} className="form-control"/>
+                                                    <input type="number" required  onChange={this.handleChange} name="phone" id="phone" placeholder="+0189000" value={this.state.phone} className="form-control"/>
                                                 </div>
 
                                                 <div className="form-group">
-                                                    <input type="text" onChange={this.handleChange} name="address" id="address" value={this.state.address} placeholder="Your address" className="form-control"/>
+                                                    <input type="text" required onChange={this.handleChange} name="address" id="address" value={this.state.address} placeholder="Your address" className="form-control"/>
                                                 </div>
                                                 <div className="form-group">
-                                                    <input type="text" onChange={this.handleChange} name="country" id="country" placeholder="Your country" value={this.state.country} className="form-control"/>
+                                                    <input type="text" required  onChange={this.handleChange} name="country" id="country" placeholder="Your country" value={this.state.country} className="form-control"/>
                                                 </div>
 
                                                 <div className="form-group">
-                                                    <input type="text" onChange={this.handleChange} name="gender" id="gender" value={this.state.gender} placeholder="Male or Female" className="form-control"/>
+                                                    <input type="text" required  onChange={this.handleChange} name="gender" id="gender" value={this.state.gender} placeholder="Male or Female" className="form-control"/>
                                                 </div>
-                                                <div className="form-group">
-                                                    <input type="text" onChange={this.handleChange} name="btcaddress" id="btc" placeholder="Your BTC address" value={this.state.btcaddress} className="form-control"/>
-                                                </div>
+                                                
                                                 <button type="submit" disabled={this.state.disableBtn} className="btn btn-primary">{this.state.signBtn}</button>
                                             </form>
                                         </div>

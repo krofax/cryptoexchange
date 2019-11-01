@@ -48,9 +48,9 @@ class App extends Component {
       <React.Fragment>
         <Router>
             <Switch>
-              {this.state.token && (
+              {/* {this.state.token && (
                 <Redirect to="/dashboard" />
-              )}
+              )} */}
               <Route path="/" component={Home} exact></Route>
               <Route path="/login" component={Login} exact></Route>
               <Route path="/register" component={Register} exact></Route>
@@ -60,16 +60,12 @@ class App extends Component {
               <Route path="/accounts" component={totalAccount} exact></Route>
               <Route path="/password" component={Password} exact > </Route>
               <Route path="/logout" component={Logout} exact > </Route>
-              {this.state.token && (
-                <Route path="/dashboard" component={Dashboard} exact > </Route>
-              )}
+              <Route path="/dashboard" component={Dashboard} exact > </Route>
               <Route path="/user-profile" component={Profile} exact > </Route>
               <Route path="/user-deposit" component={UserDeposit} exact > </Route>
               <Route path="/send-money" component={SendMoney} exact > </Route>
               <Route path="/user-withdraw" component={WithdrawMoney} exact > </Route>
-              {!this.state.token && (
-                <Redirect to="/login" />
-              )}
+              
               <Route component={Home}></Route>
             </Switch>
           </Router>
