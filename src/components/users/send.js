@@ -20,17 +20,17 @@ return (
                 <div className="row">
                     <div className="col-md-8 col-lg-8 mx-auto ">
                         <div className="bg-light shadow-md rounded p-3 p-sm-4 mb-8 mt-8 form-box">
-                        <h3 class="text-5 msg-header">Personal Details</h3>
-                                <p class="text-4 text-center">Send your money on anytime, anywhere in the world.</p>
+                        <h3 className="text-5 msg-header">Personal Details</h3>
+                                <p className="text-4 text-center">Send your money on anytime, anywhere in the world.</p>
                                 
                                 <form id="form-send-money" method="post">
-                                    <div class="form-group">
-                                        <label for="emailID">Recipient</label>
-                                        <input type="text" value="" class="form-control" data-bv-field="emailid"
+                                    <div className="form-group">
+                                        <label htmlFor="emailID">Recipient</label>
+                                        <input type="text" value="" className="form-control" data-bv-field="emailid"
                                                 id="emailID" required placeholder="Enter Email Address"/>
                                     </div>
                                 <div className="form-group">
-                                    <label for="youSend">You Send</label>
+                                    <label htmlFor="youSend">You Send</label>
                                     <div className="input-group">
                                         <div className="input-group-prepend"><span
                                                 className="input-group-text currency-icon">$</span>
@@ -53,7 +53,7 @@ return (
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label for="youSend">Recipient Gets</label>
+                                    <label htmlFor="youSend">Recipient Gets</label>
                                     <div className="input-group">
                                         <div className="input-group-prepend"><span
                                                 className="input-group-text currency-icon">$</span>
@@ -76,7 +76,7 @@ return (
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label for="paymentMethod">Payment Method</label>
+                                    <label htmlFor="paymentMethod">Payment Method</label>
                                     <select id="cardType" className="custom-select" required="">
                                         <option value="">Select Payment Method</option>
                                         <option>Credit or Debit Cards</option>

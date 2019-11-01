@@ -70,12 +70,12 @@
                             <div className="modal-body">
                                 <form id="changePassword" method="post">
                                     <div className="form-group">
-                                        <label for="existingPassword">Confirm Current Password</label>
+                                        <label htmlFor="existingPassword">Confirm Current Password</label>
                                         <input type="text" className="form-control" data-bv-field="existingpassword"
                                                 id="existingPassword" required placeholder="Enter Current Password"/>
                                     </div>
                                     <div className="form-group">
-                                        <label for="newPassword">New Password</label>
+                                        <label htmlFor="newPassword">New Password</label>
                                         <input type="text" className="form-control" data-bv-field="newpassword"
                                                 id="newPassword" required placeholder="Enter New Password"/>
                                     </div>

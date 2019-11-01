@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 // import axiosQueries from '../queries/index';
 import axios from 'axios';
 
+import AuthContext from '../Context/auth-token';
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +16,8 @@ class Login extends Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    static contextType = AuthContext;
     handleSubmit(e) {
         e.preventDefault()
         this.setState({btnDis: true, btnTxt: 'LOADING.....'})
@@ -31,6 +35,15 @@ class Login extends Component {
                         btnDis: true
                     });
                     window.location.href = "/dashboard";
+                    console.log('tokens', res.data)
+                }
+            })
+            .then(resData => {
+                if (resData.data.token) {
+                    this.context.login(
+                        resData.data.login.token,
+                        resData.data.login.user
+                    )
                 }
             })
             .catch(err => {

@@ -21,7 +21,7 @@ class UserDeposit extends Component {
                             <div className="bg-light shadow-md rounded p-3 p-sm-4 mb-8 mt-8 form-box">
                                 <form id="form-send-money" method="post" className="form">
                                     <div className="form-group">
-                                        <label for="youSend">Amount</label>
+                                        <label htmlFor="youSend">Amount</label>
                                         <div className="input-group">
                                             <div className="input-group-prepend"><span
                                                     className="input-group-text currency-icon">$</span>
@@ -44,7 +44,7 @@ class UserDeposit extends Component {
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label for="paymentMethod">Payment Method</label>
+                                        <label htmlFor="paymentMethod">Payment Method</label>
                                         <select id="cardType" className="custom-select" required="">
                                             <option value="">Select Payment Method</option>
                                             <option>Credit or Debit Cards</option>
