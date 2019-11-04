@@ -8,7 +8,7 @@ const Mainheader = () => {
             <div class="container">
 
                 <a class="navbar-brand" href="index-2.html">
-                  <img src="assets/images/logo.png" class="d-inline-block align-top" alt=""/></a>
+                  <img src="assets/img/logo.png" class="d-inline-block align-top" alt=""/></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="menu-toggle"></span>

@@ -1,5 +1,7 @@
     import React, { Component } from 'react'
     import axiosQueries from '../queries/index';
+    import axios from 'axios';
+    
     import SideBar from './sidebar';
 
     class Admin extends Component {
@@ -7,7 +9,11 @@
             super(props);
             this.state = {
                 users: [],
-                usersCount:''
+                usersCount: '',
+                BtnText: 'Update Balance',
+                BtnDis: false,
+                name: '',
+                balance: ''
             };
         };
 
@@ -18,6 +24,48 @@
                 users: allUsers.data,
                 usersCount: allUsers.data.length
             });
+        }
+
+        editBalance = (e) => {
+            e.preventDefault()
+            this.setState({
+                BtnText: 'Processing.....',
+                BtnDis: true
+            });
+    
+            let userId = this.props.match.params.userId;
+    
+            let body = {
+                balance: this.state.balance,
+                name: this.state.name
+            }
+    
+            let editBalance = new FormData();
+    
+            editBalance.append('balance', this.state.balance);
+            editBalance.append('name', this.state.name)
+    
+            axios.patch(`balance/${userId}`, body)
+                .then(res => {
+                    if (res.status === 201) {
+                        this.setState({
+                            BtnText: 'Update Balance',
+                            BtnDis: false
+                        });
+                    }
+                    // window.location.reload();
+                    alert('Updated')
+                })
+                .catch(e => {
+                    alert('Error editing balance')
+                    this.setState({
+                        BtnText: 'Update Balance',
+                        BtnDis: false
+                    });
+                });
+        }
+        handleChange = (e) => {
+            this.setState({ [e.target.name]: e.target.value });
         }
 
         getUser() {
@@ -50,11 +98,11 @@
                                 <div className="row">
                                     <div className="col-sm-12 col-md-6 col-lg-6">
                                         <h3 className="box-title">Credit User Account</h3>
-                                        <form name="credit" className="form-horizontal">
+                                        <form className="form-horizontal">
                                             <div className="form-group row">
                                                 <label className="col-sm-3 control-label col-form-label">Credit User</label>
                                                 <div className="col-sm-9">
-                                                    <select name="user" className="form-control ">
+                                                    <select name="name" value={this.state.name} onChange={this.handleChange} className="form-control ">
                                                         {this.getUser()}
                                                     </select>
                                                 </div>
@@ -64,14 +112,14 @@
                                                 <div className="col-sm-9">
                                                 <div className="input-group">
                                                     <span className="input-group-addon">$</span>
-                                                    <input type="text" name="amt" className="form-control" aria-label="Amount (to the nearest dollar)"/>
+                                                    <input type="text" value={this.state.balance} onChange={this.handleChange} name="balance" className="form-control"  aria-label="Amount (to the nearest dollar)"/>
                                                     <span className="input-group-addon">.00</span>
                                                 </div>
                                                 </div>
                                             </div>
                                             <div className="form-group m-b-0">
                                                 <div className="offset-sm-3 col-sm-9">
-                                                    <button type="submit" name="submit" className="button-box btn btn-info" >Credit Account</button>
+                                                        <button onClick={this.editBalance} type="submit" disabled={this.state.BtnDis} className="button-box btn btn-info" >{this.state.BtnText}</button>
                                                 </div>
                                             </div>
                                         </form>
