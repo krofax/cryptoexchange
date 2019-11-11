@@ -1,9 +1,10 @@
     import React, { Component } from 'react'
-
+    
     import SideBar from './sidebar';
     import Header from './header';
 
-    class Profile extends Component {
+class Profile extends Component {
+        
     render() {
         return (
             <div id="main-wrapper">

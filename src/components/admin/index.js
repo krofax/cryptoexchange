@@ -33,7 +33,7 @@
                 BtnDis: true
             });
     
-            let userId = this.props.match.params.userId;
+            let id = this.props.match.params.id;
     
             let body = {
                 balance: this.state.balance,
@@ -45,7 +45,7 @@
             editBalance.append('balance', this.state.balance);
             editBalance.append('name', this.state.name)
     
-            axios.patch(`balance/${userId}`, body)
+            axios.patch(`balance/${id}`, body)
                 .then(res => {
                     if (res.status === 201) {
                         this.setState({

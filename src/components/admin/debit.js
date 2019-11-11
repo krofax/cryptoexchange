@@ -1,14 +1,19 @@
     import React, { Component } from 'react'
-import axiosQueries from '../queries/index';
-    
+    import axiosQueries from '../queries/index';
+    import axios from 'axios';
     import SideBar from './sidebar';
     
-    class Debit extends Component {
+    class deposit extends Component {
         constructor(props) {
             super(props);
             this.state = {
                 users: [],
-                usersCount:''
+                usersCount: '',
+                BtnText: 'Update deposit',
+                BtnDis: false,
+                name: '',
+                deposit: '',
+                id: this.props.match.params.id,
             };
         };
 
@@ -19,8 +24,47 @@ import axiosQueries from '../queries/index';
                 users: allUsers.data,
                 usersCount: allUsers.data.length
             });
-            console.log('all users', this.state.users)
-            console.log('all usersCount', this.state.usersCount)
+        }
+
+        editDeposit = (e) => {
+            e.preventDefault()
+            this.setState({
+                BtnText: 'Processing.....',
+                BtnDis: true
+            });
+    
+            let body = {
+                deposit: this.state.deposit,
+                name: this.state.name
+            }
+            const { id } = this.state;
+    
+            let editDeposit = new FormData();
+    
+            editDeposit.append('deposit', this.state.deposit);
+            // editDeposit.append('name', this.state.name)
+    
+            axios.patch(`deposit/5dbc2d1310229b34c46d01a2`, body)
+                .then(res => {
+                    if (res.status === 201) {
+                        this.setState({
+                            BtnText: 'Update deposit',
+                            BtnDis: false
+                        });
+                    }
+                    // window.location.reload();
+                    alert('Updated')
+                })
+                .catch(e => {
+                    alert('Error editing deposit')
+                    this.setState({
+                        BtnText: 'Update deposit',
+                        BtnDis: false
+                    });
+                });
+        }
+        handleChange = (e) => {
+            this.setState({ [e.target.name]: e.target.value });
         }
 
         getUser() {
@@ -53,10 +97,10 @@ import axiosQueries from '../queries/index';
                             <div className="white-box">
                                 <div className="row">
                                     <div className="col-sm-12 col-md-6 col-lg-6">
-                                        <h3 className="box-title">Debit User Account</h3>
+                                        <h3 className="box-title">deposit User Account</h3>
                                         <form name="credit" className="form-horizontal" action="" method="post">
                                             <div className="form-group row">
-                                                <label className="col-sm-3 control-label col-form-label">Debit User</label>
+                                                <label className="col-sm-3 control-label col-form-label">deposit User</label>
                                                 <div className="col-sm-9">
                                                         <select name="user" className="form-control ">
                                                             {this.getUser()}
@@ -68,14 +112,14 @@ import axiosQueries from '../queries/index';
                                                 <div className="col-sm-9">
                                                 <div className="input-group">
                                                     <span className="input-group-addon">$</span>
-                                                    <input type="text" name="amt" className="form-control" aria-label="Amount (to the nearest dollar)"/>
+                                                    <input type="text" value={this.state.deposit} onChange={this.handleChange} name="deposit" className="form-control" aria-label="Amount (to the nearest dollar)"/>
                                                     <span className="input-group-addon">.00</span>
                                                 </div>
                                                 </div>
                                             </div>
                                             <div className="form-group m-b-0">
                                                 <div className="offset-sm-3 col-sm-9">
-                                                    <button type="submit" name="submit" className="button-box btn btn-info" >Debit Account</button>
+                                                    <button type="submit" onClick={this.editDeposit} disabled={this.state.BtnDis} name="submit" className="button-box btn btn-info" >{this.state.BtnText}</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -95,4 +139,4 @@ import axiosQueries from '../queries/index';
     }
     }
 
-    export default Debit;
+    export default deposit;

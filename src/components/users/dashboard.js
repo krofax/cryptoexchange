@@ -1,8 +1,25 @@
 import React, { Component } from 'react'
-
+import axiosQueries from '../queries/index';
 import SideBar from './sidebar';
 import Header from './header';
 class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: []
+        };
+    }
+
+    async componentDidMount() {
+        // console.log('Token', this.props.admin.adminDetails.token);
+        let users = await axiosQueries.Get('users');
+
+        this.setState({
+            user: users.data,
+        });
+        console.log('all users', this.state.user)
+    }
 render() {
     return (
         <div id="main-wrapper">
