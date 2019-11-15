@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 
 import axios from 'axios';
 
-// import AuthContext from '../Context/auth-token';
-
 class Login extends Component {
     constructor(props) {
         super(props);
