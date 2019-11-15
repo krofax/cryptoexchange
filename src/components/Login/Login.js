@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
-// import axiosQueries from '../queries/index';
 import axios from 'axios';
 
-import AuthContext from '../Context/auth-token';
+// import AuthContext from '../Context/auth-token';
 
 class Login extends Component {
     constructor(props) {
@@ -30,6 +29,8 @@ class Login extends Component {
             .then(res => {
                 if (res.status === 200) {
                     const token = res.data.token;
+                    localStorage.setItem('jwtToken', token)
+                    
                     this.setState({
                         email: '',
                         password: '',
@@ -37,7 +38,7 @@ class Login extends Component {
                         btnDis: true,
                         userToken: token
                     });
-                    console.log('tokens', this.state.userToken)
+                    console.log('token', this.state.userToken)
                 }
                 window.location.href = "/dashboard";
                 // alert('logged in')
