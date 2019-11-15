@@ -39,13 +39,7 @@ class Login extends Component {
                     console.log('token', this.state.userToken)
                 }
                 window.location.href = "/dashboard";
-                // alert('logged in')
-                // if (res.data.token) {
-                //     this.context.login(
-                //         res.data.login.token,
-                //         res.data.login.user
-                //     )
-                // }
+                
             })
             
             .catch(err => {
