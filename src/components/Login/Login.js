@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
 import axios from 'axios';
+// import jwt from 'jsonwebtoken';
 
 class Login extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class Login extends Component {
                 if (res.status === 200) {
                     const token = res.data.token;
                     localStorage.setItem('jwtToken', token)
-                    
+                    console.log(res.data);
                     this.setState({
                         email: '',
                         password: '',
