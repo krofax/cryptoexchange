@@ -28,10 +28,13 @@ class Login extends Component {
                 if (res.status === 200) {
                     const token = res.data.token;
                     localStorage.setItem('jwtToken', token);
-                    const info = res.data.user;
+                    let info = res.data.user;
+                    let userInfos = JSON.stringify(info);
+                    localStorage.setItem('usersDetails', userInfos)
                     console.log('informs', info);
                     this.setState({
                         email: '',
+
                         password: '',
                         btnTxt: 'LOGIN',
                         btnDis: false,
