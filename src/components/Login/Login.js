@@ -42,7 +42,7 @@ class Login extends Component {
                     });
                     console.log('token', this.state.userToken)
                 }
-                // window.location.href = "/dashboard";
+                window.location.href = "/dashboard";
                 
             })
             
