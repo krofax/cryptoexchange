@@ -27,18 +27,19 @@ class Login extends Component {
             .then(res => {
                 if (res.status === 200) {
                     const token = res.data.token;
-                    localStorage.setItem('jwtToken', token)
-                    console.log(res.data);
+                    localStorage.setItem('jwtToken', token);
+                    const info = res.data.user;
+                    console.log('informs', info);
                     this.setState({
                         email: '',
                         password: '',
                         btnTxt: 'LOGIN',
-                        btnDis: true,
+                        btnDis: false,
                         userToken: token
                     });
                     console.log('token', this.state.userToken)
                 }
-                window.location.href = "/dashboard";
+                // window.location.href = "/dashboard";
                 
             })
             
