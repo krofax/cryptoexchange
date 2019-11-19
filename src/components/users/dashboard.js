@@ -7,18 +7,22 @@ class Dashboard extends Component {
         super(props);
 
         this.state = {
-            user: []
+            user: [],
+            data: []
         };
     }
 
     async componentDidMount() {
-        // console.log('Token', this.props.admin.adminDetails.token);
-        let users = await axiosQueries.Get('users');
+        let token = localStorage.getItem('jwtToken')
+        let users = await axiosQueries.Get('users', token);
+        let userdata = JSON.parse(localStorage.getItem('usersDetails'));
 
         this.setState({
-            user: users.data,
-        });
-        console.log('all users', this.state.user)
+            data: Object.values(userdata),
+            user: users
+        })
+        
+        console.log('statedash', this.state.data)
     }
 render() {
     return (

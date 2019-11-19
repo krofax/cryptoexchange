@@ -31,7 +31,7 @@ export default {
             }
         });
     },
-    Get(link, token,) {
+    Get(link, token) {
         return axios.get(`${link}`, {
             headers: {
                 'Content-Type': 'application/json',

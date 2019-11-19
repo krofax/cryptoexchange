@@ -34,7 +34,6 @@ class Login extends Component {
                     console.log('informs', info);
                     this.setState({
                         email: '',
-
                         password: '',
                         btnTxt: 'LOGIN',
                         btnDis: false,
