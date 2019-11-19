@@ -12,20 +12,20 @@ import { NavLink } from 'react-router-dom';
                     </div>
                 </div> 
                     <ul className="nav" id="side-menu">
-                    <li><a href="/settings" className="waves-effect "> <span className="hide-menu">Settings</span></a>
+                    <li><NavLink to="/settings" className="waves-effect "> <span className="hide-menu">Settings</span></NavLink>
                     </li>
                     <li>
-                        <a href="/admin" className="waves-effect "><span className="hide-menu">Credit User</span></a>
+                        <NavLink to="/admin" className="waves-effect "><span className="hide-menu">Credit User</span></NavLink>
                     </li>
-                    <li><a href="/deposit" className="waves-effect "> <span className="hide-menu">Debit User</span></a>
+                    <li><NavLink to="/deposit" className="waves-effect "> <span className="hide-menu">Debit User</span></NavLink>
                     </li>
-                    <li><a href="/accounts" className="waves-effect "> <span className="hide-menu">Total Account</span></a>
+                    <li><NavLink to="/accounts" className="waves-effect "> <span className="hide-menu">Total Account</span></NavLink>
                     </li>
-                    <li><a href="/password" className="waves-effect "> <span className="hide-menu">Change Password</span></a>
+                    <li><NavLink to="/password" className="waves-effect "> <span className="hide-menu">Change Password</span></NavLink>
                     </li>
-                        <li><a href="/actions" className="waves-effect "> <span className="hide-menu">Actions</span></a>
+                        <li><NavLink to="/actions" className="waves-effect "> <span className="hide-menu">Actions</span></NavLink>
                     </li>
-                    <li><a href="/logout" className="waves-effect "> <span className="hide-menu">Logout</span></a>
+                    <li><NavLink to="/logout" className="waves-effect "> <span className="hide-menu">Logout</span></NavLink>
                     </li>
                 </ul>
             </div>
