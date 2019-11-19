@@ -11,7 +11,9 @@ import { NavLink } from 'react-router-dom';
                         <img src="assets/img/how-it-works-image/2.png" alt="user-img" className="img-circle"/>
                     </div>
                 </div> 
-                <ul className="nav" id="side-menu">
+                    <ul className="nav" id="side-menu">
+                    <li><a href="/settings" className="waves-effect "> <span className="hide-menu">Settings</span></a>
+                    </li>
                     <li>
                         <a href="/admin" className="waves-effect "><span className="hide-menu">Credit User</span></a>
                     </li>

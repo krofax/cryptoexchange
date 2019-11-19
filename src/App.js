@@ -15,6 +15,7 @@ import Action from './components/admin/actions';
 import totalAccount from './components/admin/accounts';
 import Password from './components/admin/password';
 import Logout from './components/admin/logout';
+import Settings from './components/admin/settings';
 import Dashboard from './components/users/dashboard';
 import Profile from './components/users/profile';
 import UserDeposit from './components/users/deposit';
@@ -75,7 +76,7 @@ class App extends Component {
                   <Route path="/user-deposit" component={UserDeposit} exact > </Route>
                   <Route path="/send-money" component={SendMoney} exact > </Route>
                   <Route path="/user-withdraw" component={WithdrawMoney} exact > </Route>
-                  
+                  <Route path="/settings" component ={Settings} exact > </Route>
                   <Route component={Home}></Route>
                 </Switch>
               </Router>
