@@ -23,8 +23,6 @@ import { NavLink } from 'react-router-dom';
                     </li>
                     <li><NavLink to="/password" className="waves-effect "> <span className="hide-menu">Change Password</span></NavLink>
                     </li>
-                        <li><NavLink to="/actions" className="waves-effect "> <span className="hide-menu">Actions</span></NavLink>
-                    </li>
                     <li><NavLink to="/logout" className="waves-effect "> <span className="hide-menu">Logout</span></NavLink>
                     </li>
                 </ul>

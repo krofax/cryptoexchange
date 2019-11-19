@@ -11,7 +11,6 @@ import Register from './components/Register/Register';
 import Admin from './components/admin/index';
 import AdminLogin from './components/admin/login';
 import Debit from './components/admin/debit';
-import Action from './components/admin/actions';
 import totalAccount from './components/admin/accounts';
 import Password from './components/admin/password';
 import Logout from './components/admin/logout';
@@ -62,7 +61,6 @@ class App extends Component {
                   )} */}
                   <Route path="/" component={Home} exact></Route>
                   <Route path="/login" component={Login} exact></Route>
-                  <Route path="/actions" component={Action} exact></Route>
                   <Route path="/register" component={Register} exact></Route>
                   <Route path="/admin" component={Admin} exact></Route>
                   <Route path="/admin-login" component={AdminLogin} exact></Route>
