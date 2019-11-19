@@ -65,9 +65,9 @@ class Header extends Component {
                                 <img src="assets/img/black-logo.png" alt="logo"/>
                             </a>
                             <nav className="primary-menu ml-auto">
-                                <a id="mobile-menu-toggler" href="#"><i className="fas fa-bars"></i></a>
+                                <a id="mobile-menu-toggler" href="/"><i className="fas fa-bars"></i></a>
                                 <ul>
-                                    <li className="current-menu-item"><a href="#">Dashboard</a></li>
+                                    <li className="current-menu-item"><a href="/dashboard">Dashboard</a></li>
                                 {this.getNames()}    
                                 
                                 </ul>
