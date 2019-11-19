@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 import axiosQueries from '../queries/index';
-
+import { Link } from 'react-router-dom';
 import SideBar from './sidebar';
 class Settings extends Component {
     constructor(props) {
         super(props);
         this.state = {
             users: [],
-            usersCount:''
+            usersCount:'',
+            userId: 0
         };
     };
 
     async componentDidMount() {
+        let userId = this.props.match.params.id;
         let allUsers = await axiosQueries.Get('users');
 
         this.setState({
             users: allUsers.data,
-            usersCount: allUsers.data.length
+            usersCount: allUsers.data.length,
+            userId
         });
         console.log('all users', this.state.users)
         console.log('all usersCount', this.state.usersCount)
@@ -32,12 +35,16 @@ class Settings extends Component {
             return (
                 <tr key={persons._id}>
                     <td>{persons.fullname}</td>
-                    <td>{persons.country}</td>
-                    <td>{persons.phone}</td>
-                    {/* <td>{persons.address}</td>
-                    <td>{persons.email}</td>
-                    <td>{persons.gender}</td>
-                    <td>{persons.btcaddress}</td> */}
+                <td>
+                  <Link className="button-box btn btn-info" to={`/deposit/${persons._id}`}>
+                    Credit User
+                  </Link>
+                </td>
+                <td>
+                  <Link className="button-box btn btn-info" to={`/deposit/${persons._id}`}>
+                    Deposit User
+                  </Link>
+                </td>
                 </tr>
             )
         })
@@ -64,8 +71,8 @@ render() {
                                         <thead>
                                             <tr>
                                                 <th>Fullname</th>
-                                                <th>Country</th>
-                                                <th>Phone</th>
+                                                <th>Credit</th>
+                                                <th>Deposit</th>
                                                 {/* <th>Address</th>
                                                 <th>Email</th>
                                                 <th>Gender</th>
@@ -73,17 +80,15 @@ render() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                {this.getUser()}
+                                          {this.getUser()}
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-            <footer className="footer text-center">  &copy; 2018</footer>
         </div>
     </div>
     )

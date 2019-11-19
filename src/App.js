@@ -63,6 +63,7 @@ class App extends Component {
                   <Route path="/login" component={Login} exact></Route>
                   <Route path="/register" component={Register} exact></Route>
                   <Route path="/admin" component={Admin} exact></Route>
+                  <Route path="/admin/:id" component={Admin} exact></Route>
                   <Route path="/admin-login" component={AdminLogin} exact></Route>
                   <Route path="/deposit" component={Debit} exact></Route>
                   <Route path="/deposit/:id" component={Debit} exact></Route>
