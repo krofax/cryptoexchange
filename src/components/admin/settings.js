@@ -36,7 +36,7 @@ class Settings extends Component {
                 <tr key={persons._id}>
                     <td>{persons.fullname}</td>
                 <td>
-                  <Link className="button-box btn btn-info" to={`/deposit/${persons._id}`}>
+                  <Link className="button-box btn btn-info" to={`/admin/${persons._id}`}>
                     Credit User
                   </Link>
                 </td>

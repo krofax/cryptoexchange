@@ -37,13 +37,11 @@
     
             let body = {
                 balance: this.state.balance,
-                name: this.state.name
             }
     
             let editBalance = new FormData();
     
             editBalance.append('balance', this.state.balance);
-            editBalance.append('name', this.state.name)
     
             axios.patch(`balance/${id}`, body)
                 .then(res => {
@@ -53,7 +51,7 @@
                             BtnDis: false
                         });
                     }
-                    // window.location.reload();
+                    //window.location.reload();
                     alert('Updated')
                 })
                 .catch(e => {
@@ -68,13 +66,13 @@
             this.setState({ [e.target.name]: e.target.value });
         }
 
-        getUser() {
-            return this.state.users.map(persons => {
-                return (
-                    <option key={persons._id} value={persons.fullname}>{persons.fullname}</option>
-                )
-            })
-        }
+        // getUser() {
+        //     return this.state.users.map(persons => {
+        //         return (
+        //             <option key={persons._id} value={persons.fullname}>{persons.fullname}</option>
+        //         )
+        //     })
+        // }
 
     render() {
         return (
@@ -98,15 +96,23 @@
                                 <div className="row">
                                     <div className="col-sm-12 col-md-6 col-lg-6">
                                         <h3 className="box-title">Credit User Account</h3>
-                                        <form className="form-horizontal">
-                                            <div className="form-group row">
+                                        <form className="form-horizontal" onSubmit={this.editBalance}>
+                                            {/* <div className="form-group row">
                                                 <label className="col-sm-3 control-label col-form-label">Credit User</label>
                                                 <div className="col-sm-9">
                                                     <select name="name" value={this.state.name} onChange={this.handleChange} className="form-control ">
                                                         {this.getUser()}
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> */}
+                                            {/* <div className="form-group row">
+                                                <label className="col-sm-3 control-label col-form-label">Fullname</label>
+                                                <div className="col-sm-9">
+                                                <div className="input-group">
+                                                    <input type="text" value={this.state.name} onChange={this.handleChange} name="name" className="form-control"  aria-label="Amount (to the nearest dollar)"/>
+                                                </div>
+                                                </div>
+                                            </div> */}
                                             <div className="form-group row">
                                                 <label className="col-sm-3 control-label col-form-label">Amount</label>
                                                 <div className="col-sm-9">
@@ -119,7 +125,7 @@
                                             </div>
                                             <div className="form-group m-b-0">
                                                 <div className="offset-sm-3 col-sm-9">
-                                                        <button onClick={this.editBalance} type="submit" disabled={this.state.BtnDis} className="button-box btn btn-info" >{this.state.BtnText}</button>
+                                                        <button type="submit" disabled={this.state.BtnDis} className="button-box btn btn-info" >{this.state.BtnText}</button>
                                                 </div>
                                             </div>
                                         </form>
