@@ -12,7 +12,7 @@
                 usersCount: '',
                 BtnText: 'Update Balance',
                 BtnDis: false,
-                name: '',
+                fullname: '',
                 balance: 0,
                 userId: 2
             };
@@ -33,9 +33,9 @@
             if (persons._id === id) {
                 this.setState({
                     balance: persons.balance,
-                    userId: persons._id
+                    userId: persons._id,
+                    fullname: persons.fullname
                 });
-                console.log('balance--', this.state.balance)
             }
             return null;
         });
@@ -54,7 +54,7 @@
                 balance: this.state.balance,
             }
     
-            const { userId } = this.state;
+            const { userId, fullname } = this.state;
     
             axios.patch(`http://localhost:3000/api/balance/${userId}`, body)
                 .then(res => {
@@ -63,7 +63,7 @@
                         BtnDis: false
                     });
                     //window.location.reload();
-                    alert('Updated')
+                    alert(`${fullname} credit balance as been Updated`)
                 })
                 .catch(e => {
                     alert('Error editing balance')
@@ -100,7 +100,17 @@
                                     <div className="col-sm-12 col-md-6 col-lg-6">
                                         <h3 className="box-title">Credit User Account</h3>
                                         <form className="form-horizontal" >
-                                        
+
+                                            <div className="form-group row">
+                                                <label className="col-sm-3 control-label col-form-label">Amount</label>
+                                                <div className="col-sm-9">
+                                                <div className="input-group">
+                                                    <input type="text" name="fullname" disabled value={this.state.fullname} onChange={this.handleChange}className="form-control"  aria-label="Amount (to the nearest dollar)"/>
+                                                    
+                                                </div>
+                                                </div>
+                                            </div>
+
                                             <div className="form-group row">
                                                 <label className="col-sm-3 control-label col-form-label">Amount</label>
                                                 <div className="col-sm-9">

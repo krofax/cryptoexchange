@@ -12,9 +12,10 @@ class Deposit extends Component {
             usersCount: '',
             BtnText: 'Update deposit',
             BtnDis: false,
-            name: '',
+            fullname: '',
             deposit: 0,
-            userId: 2
+            userId: 2,
+
         };
     };
 
@@ -33,7 +34,8 @@ class Deposit extends Component {
         if (persons._id === id) {
             this.setState({
                 deposit: persons.deposit,
-                userId: persons._id
+                userId: persons._id,
+                fullname: persons.fullname
             });
             console.log('deposit--', this.state.deposit)
         }
@@ -54,7 +56,7 @@ class Deposit extends Component {
             deposit: this.state.deposit,
         }
 
-        const { userId } = this.state;
+        const { userId, fullname } = this.state;
 
         axios.patch(`http://localhost:3000/api/deposit/${userId}`, body)
             .then(res => {
@@ -63,7 +65,7 @@ class Deposit extends Component {
                     BtnDis: false
                 });
                 //window.location.reload();
-                alert('Updated')
+                alert(`${fullname} as been Updated successfully`)
             })
             .catch(e => {
                 alert('Error editing deposit')
@@ -100,7 +102,17 @@ render() {
                                 <div className="col-sm-12 col-md-6 col-lg-6">
                                     <h3 className="box-title">Deposit User Account</h3>
                                     <form className="form-horizontal" >
-                                    
+
+                                        <div className="form-group row">
+                                            <label className="col-sm-3 control-label col-form-label">Fullname</label>
+                                            <div className="col-sm-9">
+                                            <div className="input-group">
+                                                <input type="text" name="name" disabled value={this.state.fullname} onChange={this.handleChange}className="form-control"  aria-label="Amount (to the nearest dollar)"/>
+                                                
+                                            </div>
+                                            </div>
+                                            </div>
+                                            
                                         <div className="form-group row">
                                             <label className="col-sm-3 control-label col-form-label">Amount</label>
                                             <div className="col-sm-9">
