@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axiosQueries from '../queries/index';
-import axios from 'axios';
+// import axios from 'axios';
 
 import SideBar from './sidebar';
 
@@ -37,7 +37,6 @@ class Deposit extends Component {
                 userId: persons._id,
                 fullname: persons.fullname
             });
-            console.log('deposit--', this.state.deposit)
         }
         return null;
     });
@@ -50,15 +49,13 @@ class Deposit extends Component {
             BtnDis: true
         });
 
-        let id = this.props.match.params.id;
-        console.log('params id--', id)
         let body = {
             deposit: this.state.deposit,
         }
 
         const { userId, fullname } = this.state;
 
-        axios.patch(`http://localhost:3000/api/deposit/${userId}`, body)
+        axiosQueries.Patch(`deposit/${userId}`, body)
             .then(res => {
                 this.setState({
                     BtnText: 'Update deposit',

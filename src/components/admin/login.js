@@ -32,7 +32,7 @@ class AdminLogin extends Component {
                         btnTxt: 'LOGIN',
                         btnDis: true
                     });
-                    window.location.href = "/admin";
+                    window.location.href = "/home";
                 }
             })
             .catch(err => {

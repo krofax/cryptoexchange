@@ -1,6 +1,6 @@
     import React, { Component } from 'react'
     import axiosQueries from '../queries/index';
-    import axios from 'axios';
+    // import axios from 'axios';
     
     import SideBar from './sidebar';
 
@@ -56,7 +56,7 @@
     
             const { userId, fullname } = this.state;
     
-            axios.patch(`http://localhost:3000/api/balance/${userId}`, body)
+            axiosQueries.Patch(`balance/${userId}`, body)
                 .then(res => {
                     this.setState({
                         BtnText: 'Update Balance',
