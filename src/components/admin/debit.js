@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axiosQueries from '../queries/index';
-// import axios from 'axios';
 
 import SideBar from './sidebar';
 
