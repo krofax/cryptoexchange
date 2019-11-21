@@ -18,8 +18,6 @@
                 users: allUsers.data,
                 usersCount: allUsers.data.length
             });
-            console.log('all users', this.state.users)
-            console.log('all usersCount', this.state.usersCount)
         }
 
         handleChange = (e) => {
@@ -37,7 +35,6 @@
                         <td>{persons.address}</td>
                         <td>{persons.email}</td>
                         <td>{persons.gender}</td>
-                        <td>{persons.btcaddress}</td>
                     </tr>
                 )
             })
@@ -69,7 +66,6 @@
                                                     <th>Address</th>
                                                     <th>Email</th>
                                                     <th>Gender</th>
-                                                    <th>Btc Address</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

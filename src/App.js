@@ -11,6 +11,7 @@ import Register from './components/Register/Register';
 import Admin from './components/admin/index';
 import AdminLogin from './components/admin/login';
 import Debit from './components/admin/debit';
+import Finance from './components/admin/finance';
 import totalAccount from './components/admin/accounts';
 import Password from './components/admin/password';
 import Logout from './components/admin/logout';
@@ -62,6 +63,7 @@ class App extends Component {
                   <Route path="/" component={Home} exact></Route>
                   <Route path="/login" component={Login} exact></Route>
                   <Route path="/register" component={Register} exact></Route>
+                  <Route path="/finance" component={Finance} exact></Route>
                   <Route path="/admin/:id" component={Admin} exact></Route>
                   <Route path="/admin-login" component={AdminLogin} exact></Route>
                   <Route path="/deposit/:id" component={Debit} exact></Route>

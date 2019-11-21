@@ -12,11 +12,13 @@ import { NavLink } from 'react-router-dom';
                     </div>
                 </div> 
                     <ul className="nav" id="side-menu">
-                    <li><NavLink to="/home" className="waves-effect "> <span className="hide-menu">Settings</span></NavLink>
+                    <li><NavLink to="/home" className="waves-effect "> <span className="hide-menu">Credit Users</span></NavLink>
                     </li>
-                    <li><NavLink to="/accounts" className="waves-effect "> <span className="hide-menu">Total Account</span></NavLink>
+                    <li><NavLink to="/accounts" className="waves-effect "> <span className="hide-menu">Users Details</span></NavLink>
                     </li>
                     <li><NavLink to="/password" className="waves-effect "> <span className="hide-menu">Change Password</span></NavLink>
+                    </li>
+                    <li><NavLink to="/finance" className="waves-effect "> <span className="hide-menu">Account Details</span></NavLink>
                     </li>
                     <li><NavLink to="/logout" className="waves-effect "> <span className="hide-menu">Logout</span></NavLink>
                     </li>

@@ -3,7 +3,7 @@ import axiosQueries from '../queries/index';
 
 import SideBar from './sidebar';
 
-class Actions extends Component {
+class Finance extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,8 +19,6 @@ class Actions extends Component {
             users: allUsers.data,
             usersCount: allUsers.data.length
         });
-        console.log('all users', this.state.users)
-        console.log('all usersCount', this.state.usersCount)
     }
 
     handleChange = (e) => {
@@ -33,12 +31,10 @@ class Actions extends Component {
             return (
                 <tr key={persons._id}>
                     <td>{persons.fullname}</td>
-                    <td>{persons.country}</td>
-                    <td>{persons.phone}</td>
-                    <td>{persons.address}</td>
-                    <td>{persons.email}</td>
-                    <td>{persons.gender}</td>
-                    <td>{persons.btcaddress}</td>
+                    <td>{persons.balance}</td>
+                    <td>{persons.date_balance}</td>
+                    <td>{persons.deposit}</td>
+                    <td>{persons.date_deposit}</td>
                 </tr>
             )
         })
@@ -59,18 +55,16 @@ render() {
                     <div className="col-lg-12">
                         <div className="white-box">
                             <div className="col-sm-12">
-                                <h3 className="box-title">Total Users Details</h3>
+                                <h3 className="box-title">Users Account Balance Details</h3>
                                 <div className="table-responsive">
                                     <table className="table color-bordered-table red-bordered-table">
                                         <thead>
                                             <tr>
                                                 <th>Fullname</th>
-                                                <th>Country</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Email</th>
-                                                <th>Gender</th>
-                                                <th>Btc Address</th>
+                                                <th>Credit</th>
+                                                <th>Date Credit</th>
+                                                <th>Deposit</th>
+                                                <th>Date Deposited</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -93,4 +87,4 @@ render() {
 }
 
 
-export default Actions;
+export default Finance;
