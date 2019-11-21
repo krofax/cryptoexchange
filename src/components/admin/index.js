@@ -13,17 +13,32 @@
                 BtnText: 'Update Balance',
                 BtnDis: false,
                 name: '',
-                balance: ''
+                balance: 0,
+                userId: 2
             };
         };
 
         async componentDidMount() {
             let allUsers = await axiosQueries.Get('users');
 
+            let id = this.props.match.params.id;
+
             this.setState({
                 users: allUsers.data,
                 usersCount: allUsers.data.length
             });
+
+                /**find category that mathches route param id */
+        this.state.users.find(persons => {
+            if (persons._id === id) {
+                this.setState({
+                    balance: persons.balance,
+                    userId: persons._id
+                });
+                console.log('balance--', this.state.balance)
+            }
+            return null;
+        });
         }
 
         editBalance = (e) => {
@@ -34,23 +49,19 @@
             });
     
             let id = this.props.match.params.id;
-    
+            console.log('params id--', id)
             let body = {
                 balance: this.state.balance,
             }
     
-            let editBalance = new FormData();
+            const { userId } = this.state;
     
-            editBalance.append('balance', this.state.balance);
-    
-            axios.patch(`balance/${id}`, body)
+            axios.patch(`http://localhost:3000/api/balance/${userId}`, body)
                 .then(res => {
-                    if (res.status === 201) {
-                        this.setState({
-                            BtnText: 'Update Balance',
-                            BtnDis: false
-                        });
-                    }
+                    this.setState({
+                        BtnText: 'Update Balance',
+                        BtnDis: false
+                    });
                     //window.location.reload();
                     alert('Updated')
                 })
@@ -65,14 +76,6 @@
         handleChange = (e) => {
             this.setState({ [e.target.name]: e.target.value });
         }
-
-        // getUser() {
-        //     return this.state.users.map(persons => {
-        //         return (
-        //             <option key={persons._id} value={persons.fullname}>{persons.fullname}</option>
-        //         )
-        //     })
-        // }
 
     render() {
         return (
@@ -96,36 +99,21 @@
                                 <div className="row">
                                     <div className="col-sm-12 col-md-6 col-lg-6">
                                         <h3 className="box-title">Credit User Account</h3>
-                                        <form className="form-horizontal" onSubmit={this.editBalance}>
-                                            {/* <div className="form-group row">
-                                                <label className="col-sm-3 control-label col-form-label">Credit User</label>
-                                                <div className="col-sm-9">
-                                                    <select name="name" value={this.state.name} onChange={this.handleChange} className="form-control ">
-                                                        {this.getUser()}
-                                                    </select>
-                                                </div>
-                                            </div> */}
-                                            {/* <div className="form-group row">
-                                                <label className="col-sm-3 control-label col-form-label">Fullname</label>
-                                                <div className="col-sm-9">
-                                                <div className="input-group">
-                                                    <input type="text" value={this.state.name} onChange={this.handleChange} name="name" className="form-control"  aria-label="Amount (to the nearest dollar)"/>
-                                                </div>
-                                                </div>
-                                            </div> */}
+                                        <form className="form-horizontal" >
+                                        
                                             <div className="form-group row">
                                                 <label className="col-sm-3 control-label col-form-label">Amount</label>
                                                 <div className="col-sm-9">
                                                 <div className="input-group">
                                                     <span className="input-group-addon">$</span>
-                                                    <input type="text" value={this.state.balance} onChange={this.handleChange} name="balance" className="form-control"  aria-label="Amount (to the nearest dollar)"/>
+                                                    <input type="text" name="balance" value={this.state.balance} onChange={this.handleChange}className="form-control"  aria-label="Amount (to the nearest dollar)"/>
                                                     <span className="input-group-addon">.00</span>
                                                 </div>
                                                 </div>
                                             </div>
                                             <div className="form-group m-b-0">
                                                 <div className="offset-sm-3 col-sm-9">
-                                                        <button type="submit" disabled={this.state.BtnDis} className="button-box btn btn-info" >{this.state.BtnText}</button>
+                                                        <button onClick={this.editBalance} type="submit" disabled={this.state.BtnDis} className="button-box btn btn-info" >{this.state.BtnText}</button>
                                                 </div>
                                             </div>
                                         </form>

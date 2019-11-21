@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect, } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
@@ -62,10 +62,8 @@ class App extends Component {
                   <Route path="/" component={Home} exact></Route>
                   <Route path="/login" component={Login} exact></Route>
                   <Route path="/register" component={Register} exact></Route>
-                  <Route path="/admin" component={Admin} exact></Route>
                   <Route path="/admin/:id" component={Admin} exact></Route>
                   <Route path="/admin-login" component={AdminLogin} exact></Route>
-                  <Route path="/deposit" component={Debit} exact></Route>
                   <Route path="/deposit/:id" component={Debit} exact></Route>
                   <Route path="/accounts" component={totalAccount} exact></Route>
                   <Route path="/password" component={Password} exact > </Route>
@@ -75,7 +73,7 @@ class App extends Component {
                   <Route path="/user-deposit" component={UserDeposit} exact > </Route>
                   <Route path="/send-money" component={SendMoney} exact > </Route>
                   <Route path="/user-withdraw" component={WithdrawMoney} exact > </Route>
-                  <Route path="/settings" component ={Settings} exact > </Route>
+                  <Route path="/home" component ={Settings} exact > </Route>
                   <Route component={Home}></Route>
                 </Switch>
               </Router>

@@ -12,12 +12,7 @@ import { NavLink } from 'react-router-dom';
                     </div>
                 </div> 
                     <ul className="nav" id="side-menu">
-                    <li><NavLink to="/settings" className="waves-effect "> <span className="hide-menu">Settings</span></NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/admin" className="waves-effect "><span className="hide-menu">Credit User</span></NavLink>
-                    </li>
-                    <li><NavLink to="/deposit" className="waves-effect "> <span className="hide-menu">Debit User</span></NavLink>
+                    <li><NavLink to="/home" className="waves-effect "> <span className="hide-menu">Settings</span></NavLink>
                     </li>
                     <li><NavLink to="/accounts" className="waves-effect "> <span className="hide-menu">Total Account</span></NavLink>
                     </li>
