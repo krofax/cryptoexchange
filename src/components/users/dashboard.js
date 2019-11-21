@@ -8,7 +8,8 @@ class Dashboard extends Component {
 
         this.state = {
             user: [],
-            data: []
+            data: [],
+            amount: 2
         };
     }
 
@@ -22,8 +23,16 @@ class Dashboard extends Component {
             user: users
         })
         
-        console.log('statedash', this.state.data)
+        console.log('balance', this.state.user)
     }
+
+    getAmount = () => {
+        const { data } = this.state;
+            return (
+                <span className="ml-auto"><h3 className="text-9 font-weight-400">${data[0]}</h3></span>
+            )
+    }
+
 render() {
     return (
         <div id="main-wrapper">
@@ -39,7 +48,7 @@ render() {
                                     <div className="bg-light shadow-sm text-center mb-3">
                                         <div className="d-flex admin-heading pr-3">
                                             <span className="mr-auto"><h3 className="text-9 font-weight-400"><i className="fas fa-wallet"></i> Available Balance</h3></span>
-                                            <span className="ml-auto"><h3 className="text-9 font-weight-400">$3641.00</h3></span>
+                                            {this.getAmount()}
                                         </div>
                                         <div className="pb-3 pl-3 pr-3 pt-0">
                                             <hr className="mx-n3 mt-0"/>

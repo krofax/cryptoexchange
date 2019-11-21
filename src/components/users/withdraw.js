@@ -1,9 +1,38 @@
 import React, { Component } from 'react'
-
+import axiosQueries from '../queries/index';
 import Header from './header';
 import SideBar from './sidebar';
 import SubHeader from './subheader';
 class WithdrawMoney extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        user: [],
+        data: [],
+        amount: 2
+    };
+}
+
+async componentDidMount() {
+    let token = localStorage.getItem('jwtToken')
+    let users = await axiosQueries.Get('users', token);
+    let userdata = JSON.parse(localStorage.getItem('usersDetails'));
+
+    this.setState({
+        data: Object.values(userdata),
+        user: users
+    })
+    
+    console.log('balance', this.state.user)
+}
+
+getAmount = () => {
+    const { data } = this.state;
+        return (
+          <h3 className="text-10 text-white font-weight-400">${data[0]}</h3>
+        )
+}
   render() {
     return (
       <div id="main-wrapper">
@@ -20,7 +49,7 @@ class WithdrawMoney extends Component {
                         <div className="col-md-8 col-lg-8 mx-auto ">
                         <div className="bg-light shadow-sm rounded p-3 p-sm-4 mb-4  form-box">
                                     <div className="text-center bg-primary p-4 rounded mb-4">
-                                        <h3 className="text-10 text-white font-weight-400">$2956.00</h3>
+                                        {this.getAmount()}
                                         <p className="text-white">Available Balance</p>
                                         <a href="/"
                                           className="btn btn-outline-light btn-sm shadow-none text-uppercase rounded-pill text-1">Withdraw
