@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axiosQueries from '../queries/index';
+import axios from 'axios';
 import Header from './header';
 import SideBar from './sidebar';
 import SubHeader from './subheader';
@@ -10,29 +11,89 @@ class Transfer extends Component {
     this.state = {
         user: [],
         data: [],
-        amount: 2
+        amount: 2,
+        beneficiary: '',
+        bankName: '',
+        bankAdress: '',
+        pin: '',
+        accountNo: '',
+        swiftCode: '',
+        routingNo: '',
+        amountPay: '',
+        transferBtn: 'Transfer',
+        disableBtn: false
+        
     };
 }
 
 async componentDidMount() {
     let token = localStorage.getItem('jwtToken')
     let users = await axiosQueries.Get('users', token);
-    let userdata = JSON.parse(localStorage.getItem('usersDetails'));
+    let Postdata = JSON.parse(localStorage.getItem('usersDetails'));
 
     this.setState({
-        data: Object.values(userdata),
+        data: Object.values(Postdata),
         user: users
     })
     
     console.log('balance', this.state.user)
 }
 
+handleSubmit = (e) => {
+  e.preventDefault();
+  this.setState({ disableBtn: true, transferBtn: 'transferring...' });
+  let Postdata = {
+          beneficiary : this.state.beneficiary,
+          pin:this.state.pin,
+          accountNo: this.state.accountNo,
+          routingNo: this.state.routingNo,
+          swiftCode : this.state.swiftCode,
+          bankName:this.state.bankName,
+          bankAdress:this.state.bankAdress,
+          amount: this.state.amountPays,
+          routingNumber: this.state.routingNo
+  };
+  axios.post('funds-transfer', Postdata)
+      .then(res => {
+          if (res.status === 200) {
+              alert('Funds transfered Successfully')
+              
+              // window.location.href = "/login";
+
+              // set state to empty
+              this.setState({
+                  beneficiary : '',
+                  pin:'',
+                  accountNo: '',
+                  routingNo: '',
+                  swiftCode : '',
+                  bankName:'',
+                  bankAdress:'',
+                  amountPays: '',
+                  transferBtn: 'Transfer',
+                  disableBtn: false
+              });
+          }
+      })
+      .catch(err => {
+          alert('Insufficient Balance');
+          
+          this.setState({ disableBtn: false, transferBtn: 'Transfer' });
+      });
+}
+
+handleChange = (e) => {
+  this.setState({ [e.target.name]: e.target.value })
+}
+
+
 getAmount = () => {
     const { data } = this.state;
         return (
           <h3 className="text-10 text-white font-weight-400">${data[0]}</h3>
         )
-}
+  }
+  
   render() {
     return (
       <div id="main-wrapper">
@@ -51,49 +112,59 @@ getAmount = () => {
                                     <div className="text-center bg-primary p-4 rounded mb-4">
                                         {this.getAmount()}
                                         <p className="text-white">Available Balance</p>
-                                        <a href="/"
-                                          className="btn btn-outline-light btn-sm shadow-none text-uppercase rounded-pill text-1">Withdraw
-                                            Full Amount</a></div>
-                                    <form id="form-send-money" method="post" onSubmit={}>
-                                        <div className="form-group">
-                                            <label htmlFor="withdrawto">Withdraw to</label>
-                                            <select id="withdrawto" className="custom-select" required="">
-                                                <option value="">HDFC Bank - XXXXXXXXXXXX-9025</option>
-                                                <option>Bank A/c 2 - XXXXXX-1211</option>
-                                                <option>Bank A/c 3 - XXXXXX-2011</option>
-                                                <option>Bank A/c 4 - XXXXXX-2011</option>
-                                            </select>
-                                        </div>
+                                    </div>
+                                    <form id="form-send-money" method="post" onSubmit={this.handleSubmit}>
+                                    <div className="form-group">
+                                        <label htmlFor="Beficiary Name">Beneficiary</label>
+                                        <input type="text" value={this.state.beneficiary} onChange={this.handleChange} name="beneficiary" className="form-control" data-bv-field="emailid"
+                                                id="emailID" required placeholder="Beneficiary name"/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="Account No">Account No</label>
+                                        <input type="text" value={this.state.accountNo} onChange={this.handleChange} name="accountNo" className="form-control" data-bv-field="emailid"
+                                                id="emailID" required placeholder="Account No"/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="Bank address">Bank Address</label>
+                                        <input type="text" value={this.state.bankAdress} onChange={this.handleChange} name="bankAdress" className="form-control" data-bv-field="emailid"
+                                                id="emailID" required placeholder="Bank Address"/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="Bank Name">Bank Name</label>
+                                        <input type="text" value={this.state.bankName} onChange={this.handleChange} name="bankName" className="form-control" data-bv-field="emailid"
+                                                id="emailID" required placeholder="Bank Name"/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="Swift code">Swift Code</label>
+                                        <input type="text" value={this.state.swiftCode} onChange={this.handleChange} name="swiftCode" className="form-control" data-bv-field="emailid"
+                                                id="emailID" required placeholder="Swift Code"/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="Routing No">Routing No</label>
+                                        <input type="text" value={this.state.routingNo} onChange={this.handleChange} name="routingNo" className="form-control" data-bv-field="emailid"
+                                                id="emailID" required placeholder="Routing No"/>
+                                    </div>
+                                    
+                                    <div className="form-group">
+                                        <label htmlFor="emailID">Pin</label>
+                                        <input type="text" value={this.state.pin} onChange={this.handleChange} name="pin" className="form-control" data-bv-field="emailid"
+                                                id="emailID" required placeholder="4 digit Pin"/>
+                                    </div>
                                       <div className="form-group">
                                         <label htmlFor="youSend">Amount</label>
                                         <div className="input-group">
                                             <div className="input-group-prepend"><span
                                                     className="input-group-text currency-icon">$</span>
                                             </div>
-                                            <input type="text" className="form-control" data-bv-field="youSend"
+                                            <input type="text" onChange={this.handleChange} name="amountPays" className="form-control" data-bv-field="youSend"
                                                     id="youSend"
-                                                    value="1,000" placeholder=""/>
-                                            <div className="input-group-append">
-                                            <span className="input-group-text p-0">
-                                            <select id="youSendCurrency"
-                                                    data-style="custom-select bg-transparent border-0"
-                                                    data-container="body" data-live-search="true"
-                                                    className="selectpicker form-control bg-transparent" required="">
-                                                <optgroup label="Popular Currency">
-                                                <option data-icon="currency-flag currency-flag-usd mr-1"
-                                                        data-subtext="United States dollar"
-                                                        selected="selected" value="">USD</option></optgroup>
-                                            </select>
-                                            </span></div>
+                                                    value={this.state.amountPays} placeholder=""/>
+                                            
                                         </div>
                                       </div>
-                                      <p className="text-muted mt-4">Transactions fees <span
-                                                className="float-right d-flex align-items-center">5.00 USD</span></p>
-                                        <p className="font-weight-500">Amount to Withdraw <span
-                                                className="text-3 float-right">1,000.00 USD</span></p>
-                                        <button className="btn btn-default btn-center btn-block">
+                                        <button className="btn btn-default btn-center btn-block" disable={this.state.disableBtn}>
                                             <span className="bh"></span>
-                                            <span>Continue</span>
+                                            <span>{this.state.transferBtn}</span>
                                         </button>
                                 </form>
                             </div>
