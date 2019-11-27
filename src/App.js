@@ -18,9 +18,10 @@ import Logout from './components/admin/logout';
 import Settings from './components/admin/settings';
 import Dashboard from './components/users/dashboard';
 import Profile from './components/users/profile';
-import UserDeposit from './components/users/deposit';
+// import UserDeposit from './components/users/deposit';
 import SendMoney from './components/users/send';
 import WithdrawMoney from './components/users/withdraw';
+import Transfer from './components/users/transfer';
 
 const store = createStore(
   (state = {}) => state,
@@ -72,9 +73,10 @@ class App extends Component {
                   <Route path="/logout" component={Logout} exact > </Route>
                   <Route path="/dashboard" component={Dashboard} exact > </Route>
                   <Route path="/user-profile" component={Profile} exact > </Route>
-                  <Route path="/user-deposit" component={UserDeposit} exact > </Route>
+                  {/* <Route path="/user-deposit" component={UserDeposit} exact > </Route> */}
                   <Route path="/send-money" component={SendMoney} exact > </Route>
                   <Route path="/user-withdraw" component={WithdrawMoney} exact > </Route>
+                  <Route path="/funds-transfer" component={Transfer} exact > </Route>
                   <Route path="/home" component ={Settings} exact > </Route>
                   <Route component={Home}></Route>
                 </Switch>
