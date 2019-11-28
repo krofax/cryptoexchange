@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import axiosQueries from '../queries/index';
+import Toast from '../toast/Toaster';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -47,16 +48,7 @@ class Register extends Component {
         axios.post('register', Userdata)
             .then(res => {
                 if (res.status === 200) {
-                    alert('Registered Successfully')
-                    toast("You registered successfully ", {
-                        position: "top-center",
-                        type: 'success',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true
-                    });
+                    Toast.success("You registered successfully ");
                     window.location.href = "/login";
 
                     // set state to empty
@@ -74,16 +66,7 @@ class Register extends Component {
                 }
             })
             .catch(err => {
-                alert('Email already exist');
-                toast('Email Already exist', {
-                    position: "top-center",
-                    type: 'error',
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true
-                });
+                Toast.error('Email Already exist');
                 this.setState({ disableBtn: false, signBtn: 'SIGN UP' });
             });
     }
