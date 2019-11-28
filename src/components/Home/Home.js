@@ -1,12 +1,12 @@
-import React from 'react';
+    import React from 'react';
+    import { NavLink } from 'react-router-dom';
+    import Footer from '../Footer/Footer';
+    import Header from '../Header/Header';
 
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-
-class Home extends React.Component {
-  render() {
+    class Home extends React.Component {
+    render() {
     return (
-      <div>
+        <div>
         {/* Preloader */}
         {/* <div className="preloader">
             <div className="loader">
@@ -26,7 +26,7 @@ class Home extends React.Component {
                         <div className="main-banner-content">
                             <h1>Have an account with the  21st Century Bank</h1>
                             <p>Get your financial needs met.</p>
-                            <a href="/register" className="btn btn-primary">Get Started</a>
+                            <NavLink to="/register" className="btn btn-primary">Get Started</NavLink>
                         </div>
                     </div>
                 </div>
@@ -238,7 +238,7 @@ class Home extends React.Component {
                 <div className="account-create-content">
                     <h2>Apply for an account in minutes</h2>
                     <p>Get your account today!</p>
-                    <a href="/register" className="btn btn-primary">Get Your Account</a>
+                    <NavLink to="/register" className="btn btn-primary">Get Your Account</NavLink>
                 </div>
             </div>
         </section>
@@ -248,6 +248,6 @@ class Home extends React.Component {
         {/* Footer End */}
     </div>
     );
-}
-}
-export default Home;
+    }
+    }
+    export default Home;
