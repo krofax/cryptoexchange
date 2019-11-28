@@ -92,7 +92,7 @@ handleChange = (e) => {
 getAmount = () => {
     const { data } = this.state;
         return (
-          <h3 className="text-10 text-white font-weight-400">${data[0]}</h3>
+          <h3 className="text-10 text-white font-weight-400">{data[0]}</h3>
         )
   }
   

@@ -22,7 +22,7 @@
                 <div className="container">
                     <nav className="navbar navbar-expand-md navbar-light">
                         <a className="navbar-brand" href="/">
-                            <img src="assets/img/logo.png" alt="logo"/>
+                            <img src="assets/img/black-logo.png" alt="moonpayscu"/>
                             <img src="assets/img/black-logo.png" alt="logo"/>
                         </a>
 
