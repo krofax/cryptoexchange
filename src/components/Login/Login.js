@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Toast from '../toast/Toaster';
 import axios from 'axios';
 // import jwt from 'jsonwebtoken';
 
@@ -41,12 +42,13 @@ class Login extends Component {
                     });
                     console.log('token', this.state.userToken)
                 }
+                Toast.success('Logged in')
                 window.location.href = "/dashboard";
                 
             })
             
             .catch(err => {
-                alert('Invalid Login Details')
+                Toast.error('Invalid Login Details')
                 this.setState({btnTxt: 'LOGIN', btnDis: false})
                 
             })
