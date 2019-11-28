@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axiosQueries from '../queries/index';
+import Toast from '../toast/Toaster';
 import axios from 'axios';
 import Header from './header';
 import SideBar from './sidebar';
@@ -53,10 +54,11 @@ handleSubmit = (e) => {
           amount: this.state.amountPays,
           routingNumber: this.state.routingNo
   };
+  
   axios.post('funds-transfer', Postdata)
       .then(res => {
           if (res.status === 200) {
-              alert('Funds transfered Successfully')
+            Toast.success('Funds transfered Successfully');
               
               // window.location.href = "/login";
 
@@ -76,7 +78,7 @@ handleSubmit = (e) => {
           }
       })
       .catch(err => {
-          alert('Insufficient Balance');
+          Toast.error('Insufficient Balance');
           
           this.setState({ disableBtn: false, transferBtn: 'Transfer' });
       });

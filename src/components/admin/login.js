@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Toast from '../toast/Toaster';
 // import axiosQueries from '../queries/index';
 import axios from 'axios';
 
@@ -25,7 +25,7 @@ class AdminLogin extends Component {
         axios.post('https://api-backend-mooncu.herokuapp.com/api/admin-login', adminData)
             .then(res => {
                 if (res.status === 200) {
-                    alert('Admin Logged in')
+                    Toast.success('Admin Logged in')
                     this.setState({
                         email: '',
                         password: '',
@@ -36,7 +36,7 @@ class AdminLogin extends Component {
                 }
             })
             .catch(err => {
-                alert('Invalid Login Details')
+                Toast.error('Invalid Login Details')
                 this.setState({btnTxt: 'LOGIN', btnDis: false})
                 
             })

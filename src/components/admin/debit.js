@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axiosQueries from '../queries/index';
-
+import Toast from '../toast/Toaster';
 import SideBar from './sidebar';
 
 class Deposit extends Component {
@@ -61,10 +61,10 @@ class Deposit extends Component {
                     BtnDis: false
                 });
                 //window.location.reload();
-                alert(`${fullname} as been Updated successfully`)
+                Toast.success(`${fullname} as been Updated successfully`)
             })
             .catch(e => {
-                alert('Error editing deposit')
+                Toast.error('Error editing deposit')
                 this.setState({
                     BtnText: 'Update deposit',
                     BtnDis: false

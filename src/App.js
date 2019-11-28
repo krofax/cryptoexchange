@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
@@ -55,7 +57,9 @@ class App extends Component {
         logout: this.logout
       }}>
         <React.Fragment>
+
           <Provider store={store}>
+          <ToastContainer />
             <Router>
                 <Switch>
                   {/* {this.state.token && (
