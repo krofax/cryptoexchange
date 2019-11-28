@@ -1,8 +1,8 @@
 import React , {Component} from 'react';
 import axiosQueries from '../queries/index';
 import Toast from '../toast/Toaster';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 
 class Register extends Component {
     constructor(props) {
@@ -92,11 +92,11 @@ class Register extends Component {
                                     <div className="d-table-cell">
                                         <div className="signup-form">
                                             <div className="logo">
-                                                <a href="/"><img src="assets/img/black-logo.png" alt="mooncu"/></a>
+                                                <NavLink to="/"><img src="assets/img/black-logo.png" alt="mooncu"/></NavLink>
                                             </div>
 
                                             <h3>Open up your Moonpayscu Account now</h3>
-                                            <p>Already signed up? <a href="/login">Log in</a></p>
+                                            <p>Already signed up? <NavLink to="/login">Log in</NavLink></p>
 
                                             <form onSubmit={this.handleSubmit}>
                                             <div className="form-group">

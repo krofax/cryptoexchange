@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Toast from '../toast/Toaster';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 // import jwt from 'jsonwebtoken';
 
@@ -74,11 +75,11 @@ class Login extends Component {
                                     <div className="d-table-cell">
                                         <div className="login-form">
                                             <div className="logo">
-                                                <a href="/"><img src="assets/img/black-logo.png" alt="mooncu" /></a>
+                                                <NavLink to="/"><img src="assets/img/black-logo.png" alt="mooncu" /></NavLink>
                                             </div>
 
                                             <h3>Welcome back</h3>
-                                            <p>New to Moonpayscu? <a href="/register">Sign up</a></p>
+                                            <p>New to Moonpayscu? <NavLink to="/register">Sign up</NavLink></p>
 
                                             <form onSubmit={this.handleSubmit}>
                                                 <div className="form-group">
@@ -92,7 +93,7 @@ class Login extends Component {
                                                 <button type="submit" className="btn btn-primary" disabled={this.state.btnDis}>{this.state.btnTxt}</button>
                                         
                                                 <div className="forgot-password">
-                                                    <a href="/forgot-password">Forgot Password?</a>
+                                                    <NavLink to="/forgot-password">Forgot Password?</NavLink>
                                                 </div>
                                             </form>
                                         </div>
