@@ -1,5 +1,6 @@
     import React, { Component } from 'react'
     import axiosQueries from '../queries/index';
+    import Toast from '../toast/Toaster';
     // import axios from 'axios';
     
     import SideBar from './sidebar';
@@ -63,10 +64,10 @@
                         BtnDis: false
                     });
                     //window.location.reload();
-                    alert(`${fullname} credit balance as been Updated`)
+                    Toast.success(`${fullname} credit balance as been Updated`)
                 })
                 .catch(e => {
-                    alert('Error editing balance')
+                    Toast.error('Error editing balance')
                     this.setState({
                         BtnText: 'Update Balance',
                         BtnDis: false
